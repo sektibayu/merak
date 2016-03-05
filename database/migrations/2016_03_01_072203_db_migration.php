@@ -59,46 +59,6 @@ class DbMigration extends Migration
             $table->string('username');
             $table->string('password');
         });
-
-        Schema::create('UserGroup',function(Blueprint $table)
-        {
-            $table->integer('userid');
-            $table->integer('groupid');
-        });
-
-        Schema::create('Group',function(Blueprint $table)
-        {
-            $table->increments('groupid');
-            $table->string('name');
-        });
-
-        Schema::create('GroupMenu',function(Blueprint $table)
-        {
-            $table->integer('groupid');
-            $table->integer('menuid');
-        });
-
-        Schema::Create('Menu',function(Blueprint $table)
-        {
-            $table->increments('menuid');
-            $table->string('name');
-            $table->string('url');
-            $table->integer('level');
-            $table->boolean('enabled');
-        });
-
-        Schema::Create('GroupRoute',function(Blueprint $table)
-        {
-            $table->integer('groupid');
-            $table->integer('routeid');
-        });
-
-        Schema::Create('Route',function(Blueprint $table)
-        {
-            $table->increments('routeid');
-            $table->string('url');
-            $table->boolean('enabled');
-        });
     }
 
     /**
@@ -114,11 +74,5 @@ class DbMigration extends Migration
         Schema::dropIfExists('Transaction');
         Schema::dropIfExists('Status');
         Schema::dropIfExists('User');
-        Schema::dropIfExists('UserGroup');
-        Schema::dropIfExists('Group');
-        Schema::dropIfExists('GroupMenu');
-        Schema::dropIfExists('Menu');
-        Schema::dropIfExists('GroupRoute');
-        Schema::dropIfExists('Route');
     }
 }
