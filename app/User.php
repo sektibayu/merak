@@ -4,6 +4,8 @@ namespace App;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
+use Session;
+
 class User extends Authenticatable
 {
     /**
@@ -11,16 +13,17 @@ class User extends Authenticatable
      *
      * @var array
      */
+    protected $primaryKey = "userid";
+    protected $table = "user";
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'username', 'password',
     ];
 
+    public $timestamps = false;
     /**
      * The attributes excluded from the model's JSON form.
      *
      * @var array
      */
-    protected $hidden = [
-        'password', 'remember_token',
-    ];
+    protected $hidden = ['password'];
 }
