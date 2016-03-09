@@ -1,4 +1,4 @@
-<title>Merak</title>
+<title>Monstaff HMTC ITS</title>
 <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
 
 <link rel="shortcut icon" href="{{ URL::to('favicon.ico') }}"/>
@@ -10,10 +10,11 @@
 <link href="{{ URL::to('assets/adminlte/plugins/daterangepicker/daterangepicker-bs3.css') }}" rel="stylesheet" type="text/css" />
 <link href="{{ URL::to('assets/adminlte/plugins/fullcalendar/fullcalendar.min.css') }}" rel="stylesheet" type="text/css" />
 <link href="{{ URL::to('assets/adminlte/dist/css/AdminLTE.min.css') }}" rel="stylesheet" type="text/css" />
-<link href="{{ URL::to('assets/adminlte/dist/css/skins/skin-green.min.css') }}" rel="stylesheet" type="text/css" />
+<link href="{{ URL::to('assets/adminlte/dist/css/skins/skin-blue.css') }}" rel="stylesheet" type="text/css" />
 <link href="{{ URL::to('assets/bootstrap/css/bootstrap-datetimepicker.min.css') }}" rel="stylesheet" type="text/css" />
 <link href="{{ URL::to('assets/css/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css') }}" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" href="{{ URL::to('assets/adminlte/plugins/select2/select2.min.css') }}" type="text/css">
+<link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 
 <script type="text/javascript" src="{{ URL::to('assets/js/jquery-1.11.2.min.js') }}"></script>
 <script type="text/javascript" src="{{ URL::to('assets/js/jquery-ui.min.js') }}"></script>
@@ -44,5 +45,3 @@
 <script type="text/javascript" src="{{ URL::to('assets/js/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js')}}"></script>
 <script type="text/javascript" src="{{ URL::to('assets/adminlte/plugins/select2/select2.full.min.js') }}"></script>
 <script type="text/javascript" src="{{ URL::to('assets/adminlte/plugins/ckeditor/ckeditor.js') }}"></script>
-<script type="text/javascript" src="{{ URL::to('assets/highcharts/js/highcharts.js') }}"></script>
-<script type="text/javascript" src="{{ URL::to('assets/highcharts/js/modules/exporting.js') }}"></script>
