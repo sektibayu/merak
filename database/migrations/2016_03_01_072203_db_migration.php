@@ -44,6 +44,7 @@ class DbMigration extends Migration
             $table->increments('transactionid');
             $table->timestamp('time');
             $table->integer('userid');
+            $table->integer('statusid');
         });
 
         Schema::create('Status',function(Blueprint $table)
