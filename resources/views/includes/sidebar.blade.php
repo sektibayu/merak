@@ -1,139 +1,180 @@
-<?php 
-$seg1 = Request::segment(1);
-$seg2 = Request::segment(2);
-$seg3 = Request::segment(3);
-$path = Request::path();
-// print_r($url);
- ?>
-@if (Auth::check())
-    <div class="user-panel">
-        <div class="pull-left image">
-            <img src="{{ URL::to(Auth::user()->getImage()) }}" class="img-circle" alt="User Image">
-            </div>
-            <div class="pull-left info">
-            <p><a href="{{ URL::to('user/detail/' . Auth::id() ) }}">{{ Auth::user()->name }}</a></p>
-            <a href="#"><i class="fa fa-circle text-success"></i> {{ ucwords(Auth::user()->getGroupRole(Auth::user()->id)->name) }}</a>
-        </div>
-    </div>
-    <?php $menus = Auth::user()->getGroupRole()->getSidebarMenu(); ?>
-@else
-    <?php $menus = array(); ?>
-@endif
-
-
-
 <ul class="sidebar-menu">
-<?php /*
     @if (Auth::check())
         <li>
-            <a href="{{ URL::to('dashboard') }}">
+            <a href="{{ URL::to('') }}">
                 <i class="fa fa-home"></i>
                 <span>Beranda</span>
             </a>
         </li>
     @endif
-*/ ?>
 
-    <div style="padding-right: 15px; padding-left: 15px;">
-            @foreach ($menus as $menu)
-                @if ($menu->name=='Surat Baru')
-                <a href="{{ URL::to($menu->url) }}" class="btn btn-primary btn-block margin-bottom"
-                    style="margin-top: 20px; color: #fff;">
-                    {{ $menu->name }}
-                </a>    
-                @endif
-            @endforeach
+    <?php
+        if(Auth::id() == 1){
+            $role = 1;
+        } else if(Auth::user()->department->name == 'Non Departemen'){
+            $role = 2;
+        } else {
+            $role = 3;
+        }
+    ?>
 
-            <div class="box box-solid">
-                    <div class="box-header with-border">
-                      <h3 class="box-title">Menu Utama</h3>
-                      <!-- <div class='box-tools'>
-                        <button class='btn btn-box-tool' data-widget='collapse'><i class='fa fa-minus'></i></button>
-                      </div> -->
-                    </div>
-                <div class="box-body no-padding">
-                  <ul class="nav nav-pills nav-stacked">
-                    @foreach ($menus as $menu)
-                        @if($menu->name!='Surat Baru')
-                        <li
-                        <?php  
-                           $class = "";
-                           if ($menu->url == $path) {
-                                 # code...
-                                 $class = "active";
-                             }
-                           else if ($menu->child->count()>0)
-                            {
-                                $class = "treeview ";
-                                 if (strpos($menu->url,$seg1) !== false || $menu->url=='serstakeholder'){
-                                    $class .= "active";
-                                    if (strpos($menu->url,'inout') !== false 
-                                        || strpos($menu->url,'serstakeholder') !== false
-                                        || strpos($menu->url,'document') !== false ){
-                                      $class = " ";
-                                    }
-                                 }
-                             }
-                             
-                         ?>                    
-                             class="<?php echo $class ?>"        
-                        >
-                            <a href="{{ URL::to($menu->url) }}">
-                                <i class="fa fa-folder-o"></i>
-                                <span>{{ $menu->name }}</span>
-                                @if ($menu->child->count())
-                                <i class="fa fa-angle-left pull-right"></i>
-                                @endif
+    @if($role == 1)
 
-                                <!-- Persiapan unread messages -->
-                                <!-- <span class="label label-primary pull-right">12</span> -->
-                            </a>
-                            @if($menu->child->count() != 0)
-                                <ul class="treeview-menu" style="padding-left: 0px;">
-                                @foreach($menu->child as $child)
-                                    <li
-                                    @if($menu->url == $path ) 
-                                        class="active"
-                                     @endif
-                                    >
-                                        <a href="{{ URL::to($child->url) }}">
-                                            <i class="fa fa-angle-double-right"></i>
-                                            {{ $child->name }}
-                                        </a>
-                                    </li>
-                                @endforeach
-                                </ul>
-                            @endif
-                        </li>
-                        @endif
-                    @endforeach
-
-                  </ul>
-                </div><!-- /.box-body -->
-              </div><!-- /. box -->
-              </div>
-
-    <!-- @foreach ($menus as $menu)
-        <li @if($menu->child->count()) class="treeview" @endif>
-            <a href="{{ URL::to($menu->url) }}">
+        <li class="treeview" >
+            <a href="#">
                 <i class="fa fa-folder"></i>
-                <span>{{ $menu->name }}</span>
-                @if ($menu->child->count())
+                <span>Departemen</span>
                 <i class="fa fa-angle-left pull-right"></i>
-                @endif
             </a>
-            @if($menu->child->count() != 0)
-                <ul class="treeview-menu">
-                @foreach($menu->child as $child)
-                    <li>
-                        <a href="{{ URL::to($child->url) }}">
-                            <i class="fa fa-angle-double-right"></i>
-                            {{ $child->name }}
-                        </a>
-                    </li>
-                @endforeach
-                </ul>
-            @endif
+            <ul class="treeview-menu">
+                <li>
+                    <a href="{{ URL::to('department') }}">
+                        <i class="fa fa-angle-double-right"></i>
+                        Manage
+                    </a>
+                </li>
+            </ul>
+            <ul class="treeview-menu">
+                <li>
+                    <a href="{{ URL::to('department/create') }}">
+                        <i class="fa fa-angle-double-right"></i>
+                        Create
+                    </a>
+                </li>
+            </ul>
         </li>
-    @endforeach -->
+
+        <li class="treeview" >
+            <a href="#">
+                <i class="fa fa-folder"></i>
+                <span>Jabatan</span>
+                <i class="fa fa-angle-left pull-right"></i>
+            </a>
+            <ul class="treeview-menu">
+                <li>
+                    <a href="{{ URL::to('position') }}">
+                        <i class="fa fa-angle-double-right"></i>
+                        Manage
+                    </a>
+                </li>
+            </ul>
+            <ul class="treeview-menu">
+                <li>
+                    <a href="{{ URL::to('position/create') }}">
+                        <i class="fa fa-angle-double-right"></i>
+                        Create
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        <li class="treeview" >
+            <a href="#">
+                <i class="fa fa-folder"></i>
+                <span>User</span>
+                <i class="fa fa-angle-left pull-right"></i>
+            </a>
+            <ul class="treeview-menu">
+                <li>
+                    <a href="{{ URL::to('user') }}">
+                        <i class="fa fa-angle-double-right"></i>
+                        Manage
+                    </a>
+                </li>
+            </ul>
+            <ul class="treeview-menu">
+                <li>
+                    <a href="{{ URL::to('user/create') }}">
+                        <i class="fa fa-angle-double-right"></i>
+                        Create
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+    @elseif ($role == 2)
+        <li class="treeview" >
+            <a href="#">
+                <i class="fa fa-folder"></i>
+                <span>Feedback</span>
+                <i class="fa fa-angle-left pull-right"></i>
+            </a>
+            <ul class="treeview-menu">
+                <li>
+                    <a href="{{ URL::to('feedback') }}">
+                        <i class="fa fa-angle-double-right"></i>
+                        Manage
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li class="treeview" >
+            <a href="#">
+                <i class="fa fa-folder"></i>
+                <span>Event</span>
+                <i class="fa fa-angle-left pull-right"></i>
+            </a>
+            <ul class="treeview-menu">
+                <li>
+                    <a href="{{ URL::to('event') }}">
+                        <i class="fa fa-angle-double-right"></i>
+                        Manage
+                    </a>
+                </li>
+            </ul>
+            <ul class="treeview-menu">
+                <li>
+                    <a href="{{ URL::to('event/create') }}">
+                        <i class="fa fa-angle-double-right"></i>
+                        Create
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li class="treeview" >
+            <a href="#">
+                <i class="fa fa-folder"></i>
+                <span>Question</span>
+                <i class="fa fa-angle-left pull-right"></i>
+            </a>
+            <ul class="treeview-menu">
+                <li>
+                    <a href="{{ URL::to('question') }}">
+                        <i class="fa fa-angle-double-right"></i>
+                        Manage
+                    </a>
+                </li>
+            </ul>
+            <ul class="treeview-menu">
+                <li>
+                    <a href="{{ URL::to('question/create') }}">
+                        <i class="fa fa-angle-double-right"></i>
+                        Create
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li class="treeview" >
+            <a href="{{ URL::to('mark') }}">
+                <i class="fa fa-folder"></i>
+                <span>Nilai</span>
+            </a>
+        </li>
+    @else
+
+        <li class="treeview" >
+            <a href="{{ URL::to('feedback/create') }}">
+                <i class="fa fa-folder"></i>
+                <span>Beri Feedback</span>
+            </a>
+        </li>
+
+        <li class="treeview" >
+            <a href="{{ URL::to('marks') }}">
+                <i class="fa fa-folder"></i>
+                <span>Lihat Nilai</span>
+            </a>
+        </li>
+
+    @endif
 </ul>
