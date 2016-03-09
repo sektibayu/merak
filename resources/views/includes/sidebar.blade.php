@@ -16,35 +16,35 @@
         </a>
         <ul class="treeview-menu">
             <li>
-                <a href="#">
+                <a href="{{URL::to('rack')}}">
                     <i class="fa fa-folder"></i>
                     <span>Rak</span>
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="{{URL::to('item')}}">
                     <i class="fa fa-folder"></i>
                     <span>Item</span>
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="{{URL::to('transaction')}}">
                     <i class="fa fa-folder"></i>
                     <span>Transaction</span>
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="{{URL::to('status')}}">
                     <i class="fa fa-folder"></i>
                     <span>Status</span>
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="{{URL::to('user')}}">
                     <i class="fa fa-folder"></i>
                     <span>User</span>
                     <i class="fa fa-angle-left pull-right"></i>
