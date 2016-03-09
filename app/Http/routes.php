@@ -29,3 +29,12 @@ Route::get('/', function () {
 Route::group(['middleware' => ['web']], function () {
     //
 });
+
+
+Route::get ('rack', 'RackController@index');
+Route::get ('rack/detail/{id}', 'RackController@detail');
+Route::get ('rack/create', 'RackController@create');
+Route::post('rack/create', array('before' => 'csrf', 'uses' => 'RackController@create'));
+Route::get ('rack/update/{id}', 'RackController@update');
+Route::post('rack/update/{id}', array('before' => 'csrf', 'uses' => 'RackController@update'));
+Route::get ('rack/delete/{id}', 'RackController@delete');
