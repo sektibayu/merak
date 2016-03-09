@@ -1,4 +1,4 @@
-<title>Monstaff HMTC ITS</title>
+<title>Management Rak</title>
 <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
 
 <link rel="shortcut icon" href="{{ URL::to('favicon.ico') }}"/>
