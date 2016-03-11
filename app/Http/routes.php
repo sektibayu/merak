@@ -38,3 +38,27 @@ Route::post('rack/create', array('before' => 'csrf', 'uses' => 'RackController@c
 Route::get ('rack/update/{id}', 'RackController@update');
 Route::post('rack/update/{id}', array('before' => 'csrf', 'uses' => 'RackController@update'));
 Route::get ('rack/delete/{id}', 'RackController@delete');
+
+Route::get ('user', 'UserController@index');
+Route::get ('user/detail/{id}', 'UserController@detail');
+Route::get ('user/create', 'UserController@create');
+Route::post('user/create', array('before' => 'csrf', 'uses' => 'UserController@create'));
+Route::get ('user/update/{id}', 'UserController@update');
+Route::post('user/update/{id}', array('before' => 'csrf', 'uses' => 'UserController@update'));
+Route::get ('user/delete/{id}', 'UserController@delete');
+
+Route::get ('status', 'StatusController@index');
+Route::get ('status/detail/{id}', 'StatusController@detail');
+Route::get ('status/create', 'StatusController@create');
+Route::post('status/create', array('before' => 'csrf', 'uses' => 'StatusController@create'));
+Route::get ('status/update/{id}', 'StatusController@update');
+Route::post('status/update/{id}', array('before' => 'csrf', 'uses' => 'StatusController@update'));
+Route::get ('status/delete/{id}', 'StatusController@delete');
+
+Route::get ('item', 'ItemController@index');
+Route::get ('item/detail/{id}', 'ItemController@detail');
+Route::get ('item/create', 'ItemController@create');
+Route::post('item/create', array('before' => 'csrf', 'uses' => 'ItemController@create'));
+Route::get ('item/update/{id}', 'ItemController@update');
+Route::post('item/update/{id}', array('before' => 'csrf', 'uses' => 'ItemController@update'));
+Route::get ('item/delete/{id}', 'ItemController@delete');

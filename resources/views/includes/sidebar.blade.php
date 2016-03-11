@@ -50,13 +50,6 @@
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
             </li>
-            <li>
-                <a href="#">
-                    <i class="fa fa-folder"></i>
-                    <span>Status</span>
-                    <i class="fa fa-angle-left pull-right"></i>
-                </a>
-            </li>
         </ul>
     </li>
 

@@ -7,9 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 class User extends Model
 {
     protected $table = "User";
-    protected $primaryKey = "statusid";
+    protected $primaryKey = "userid";
 
-    protected $fillable = ['name','username','password'];
+    protected $fillable = [
+        'name',
+        'username',
+        'password'
+    ];
 
     public $timestamps = false;
 }
