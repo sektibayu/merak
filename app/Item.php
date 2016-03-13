@@ -8,6 +8,7 @@ class Item extends Model
 {
 	protected $table = "item";
     protected $primaryKey = "itemid";
+    public $incrementing = true;
     public $timestamps = false;
 
     protected $fillable = [

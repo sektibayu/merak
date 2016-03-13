@@ -42,7 +42,7 @@ class StatusController extends Controller
         }
         else if(Request::isMethod('post'))
         {
-            $status = Status::find($id);;
+            $status = Status::find($id);
             $status->update(Input::all());
             $status->save();
 
@@ -52,7 +52,7 @@ class StatusController extends Controller
 
     public function delete($id)
     {
-        $status = Status::find($id);;
+        $status = Status::find($id);
 
         $status->delete();
         return redirect('status');

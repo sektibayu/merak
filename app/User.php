@@ -8,7 +8,7 @@ class User extends Model
 {
     protected $table = "User";
     protected $primaryKey = "userid";
-
+	public $incrementing = true;
     protected $fillable = [
         'name',
         'username',
