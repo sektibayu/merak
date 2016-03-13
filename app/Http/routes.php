@@ -62,3 +62,11 @@ Route::post('item/create', array('before' => 'csrf', 'uses' => 'ItemController@c
 Route::get ('item/update/{id}', 'ItemController@update');
 Route::post('item/update/{id}', array('before' => 'csrf', 'uses' => 'ItemController@update'));
 Route::get ('item/delete/{id}', 'ItemController@delete');
+
+Route::get ('transaction', 'TransactionController@index');
+Route::get ('item/detail/{id}', 'ItemController@detail');
+Route::get ('item/create', 'ItemController@create');
+Route::post('item/create', array('before' => 'csrf', 'uses' => 'ItemController@create'));
+Route::get ('item/update/{id}', 'ItemController@update');
+Route::post('item/update/{id}', array('before' => 'csrf', 'uses' => 'ItemController@update'));
+Route::get ('item/delete/{id}', 'ItemController@delete');
