@@ -64,9 +64,18 @@ Route::post('item/update/{id}', array('before' => 'csrf', 'uses' => 'ItemControl
 Route::get ('item/delete/{id}', 'ItemController@delete');
 
 Route::get ('transaction', 'TransactionController@index');
+<<<<<<< HEAD
 Route::get ('transaction/detail/{id}', 'TransactionController@detail');
 Route::get ('transaction/create', 'TransactionController@create');
 Route::post('transaction/create', array('before' => 'csrf', 'uses' => 'TransactionController@create'));
 Route::get ('transaction/update/{id}', 'TransactionController@update');
 Route::post('transaction/update/{id}', array('before' => 'csrf', 'uses' => 'TransactionController@update'));
 Route::get ('transaction/delete/{id}', 'TransactionController@delete');
+=======
+Route::get ('item/detail/{id}', 'ItemController@detail');
+Route::get ('item/create', 'ItemController@create');
+Route::post('item/create', array('before' => 'csrf', 'uses' => 'ItemController@create'));
+Route::get ('item/update/{id}', 'ItemController@update');
+Route::post('item/update/{id}', array('before' => 'csrf', 'uses' => 'ItemController@update'));
+Route::get ('item/delete/{id}', 'ItemController@delete');
+>>>>>>> 945c39e5db2c2ef246c686cc38b8098e223cdf03
