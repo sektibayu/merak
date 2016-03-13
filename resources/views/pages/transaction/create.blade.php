@@ -26,15 +26,9 @@
                                 <input type="text" name="statusid" class="form-control" placeholder="status id" required>
                             </div>
                             <label for="inputEmail3" class="col-sm-4 control-label">time</label>
-                            <div class="form-group">
-                    <label>Date masks:</label>
-                    <div class="input-group">
-                      <div class="input-group-addon">
-                        <i class="fa fa-calendar"></i>
-                      </div>
-                      <input class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask="" type="text">
-                    </div><!-- /.input group -->
-                  </div>
+                            <div class="col-sm-7">
+                                <input class="form-control" name="time" placeholder="YYYY-MM-DD" type="text">
+                            </div>
                         </div>
                     </div><!-- /.box-body -->
                     <div class="box-footer">

@@ -8,7 +8,7 @@ class Transaction extends Model
 {
     protected $table="Transaction";
     protected $primaryKey="transactionid";
-    public $incrementing = true;
+    protected $dates=["dob"];
     public $timestamps=false;
     protected $fillable=[
     'time',
