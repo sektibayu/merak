@@ -31,6 +31,13 @@
                             </div>
                         </div>
                         <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-4 control-label">Nomer Part</label>
+                            <div class="col-sm-7">
+                                <input type="text" name="no_part" class="form-control" value="{{ $items->no_part }}"  required>
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                            </div>
+                        </div>
+                        <div class="form-group">
                             <label for="inputEmail3" class="col-sm-4 control-label">Price</label>
                             <div class="col-sm-7">
                                 <input type="number" name="price" class="form-control" value="{{ $items->price }}"  required>

@@ -26,6 +26,7 @@
                                 <th class="col-md-1">No.</th>
                                 <th>Rack ID</th>
                                 <th>Name</th>
+                                <th>Nomer Part</th>
                                 <th>Price</th>
                                 <th>Spec</th>
                                 <th>Stock</th>
@@ -40,6 +41,7 @@
                                 <td class="text-center">{{ $i++ }}</td>
                                 <td><a href="{{ URL::to('rack/detail/'.$item->rackid) }}" title="">{{ $item->rackid }}</a></td>
                                 <td class="text-center"><a href="{{ URL::to('item/detail/'.$item->itemid) }}" title="">{{ $item->name}}</a></td>
+                                <td class="text-center">{{ $item->no_part }}</td>
                                 <td class="text-center">{{ $item->price }}</td>
                                 <td class="text-center">{{ $item->spec }}</td>
                                 <td class="text-center">{{ $item->stock }}</td>

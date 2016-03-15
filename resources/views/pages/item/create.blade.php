@@ -29,6 +29,12 @@
                             </div>
                         </div>
                         <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-4 control-label">Nomer Part</label>
+                            <div class="col-sm-7">
+                                <input type="text" name="no_part" class="form-control" placeholder="nomer part" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
                             <label for="inputEmail3" class="col-sm-4 control-label">Price</label>
                             <div class="col-sm-7">
                                 <input type="text" name="price" class="form-control" placeholder="price" required>
@@ -49,7 +55,7 @@
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-4 control-label">Pieces</label>
                             <div class="col-sm-7">
-                                <input type="text" name="pieces" class="form-control" placeholder="30" required>
+                                <input type="text" name="pieces" class="form-control" placeholder="PCS" required>
                             </div>
                         </div>
                     </div><!-- /.box-body -->

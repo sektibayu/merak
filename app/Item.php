@@ -14,6 +14,7 @@ class Item extends Model
     protected $fillable = [
     	'rackid',
     	'name',
+        'no_part',
     	'price',
     	'spec',
     	'stock',

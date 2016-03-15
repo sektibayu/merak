@@ -25,10 +25,11 @@ class Lala extends Migration
             $table->increments('itemid');
             $table->integer('rackid');
             $table->string('name');
+            $table->string('no_part');
             $table->integer('price');
             $table->string('spec');
             $table->integer('stock');
-            $table->integer('pieces');
+            $table->string('pieces');
         });
 
         Schema::create('ItemTransaction',function(Blueprint $table)

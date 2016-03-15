@@ -30,6 +30,10 @@
                                 <th>Name</th>
                                 <td>{{ $item->name }}</td>
                             </tr>
+                             <tr>
+                                <th>Nomer Part</th>
+                                <td>{{ $item->no_part }}</td>
+                            </tr>
                             <tr>
                                 <th>Price</th>
                                 <td>{{ $item->price }}</td>
