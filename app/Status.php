@@ -14,4 +14,7 @@ class Status extends Model
     protected $fillable = [
     	'desc'
     ];
+    public status(){
+    	return $this->belongTo(Transaction::class);
+    }
 }

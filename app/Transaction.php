@@ -8,11 +8,16 @@ class Transaction extends Model
 {
     protected $table="Transaction";
     protected $primaryKey="transactionid";
-    protected $dates=["dob"];
     public $timestamps=false;
     protected $fillable=[
     'time',
     'userid',
     'statusid'
     ];
+    public function user(){
+    	return $this->belongTo(User::class);
+    }
+    public function status(){
+    	return $this->hasOne(Status::class);
+    }
 }

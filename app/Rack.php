@@ -15,4 +15,7 @@ class Rack extends Model
         'used',
         'enabled',
     );
+    public function items(){
+    	return this->hasMany(Item::class);
+    }
 }

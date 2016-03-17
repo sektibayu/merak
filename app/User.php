@@ -9,11 +9,14 @@ class User extends Model
     protected $table = "User";
     protected $primaryKey = "userid";
 	public $incrementing = true;
+	public $timestamps = false;
     protected $fillable = [
         'name',
         'username',
         'password'
     ];
 
-    public $timestamps = false;
+    public function transactions(){
+    	return $this->hasMany(Transaction::class);
+    }
 }

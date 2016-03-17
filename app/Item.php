@@ -20,4 +20,7 @@ class Item extends Model
     	'stock',
     	'pieces'
     ];
+    public function rack(){
+        return $this->belongTo(Rack::class);
+    }
 }
