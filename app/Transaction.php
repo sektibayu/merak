@@ -15,7 +15,7 @@ class Transaction extends Model
     'statusid'
     ];
     public function user(){
-    	return $this->belongTo(User::class);
+    	return $this->belongsTo(User::class);
     }
     public function status(){
     	return $this->hasOne(Status::class);

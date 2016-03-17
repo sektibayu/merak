@@ -24,13 +24,13 @@
                         <thead>
                             <tr>
                                 <th class="col-md-1">No.</th>
-                                <th>Rack ID</th>
-                                <th>Name</th>
-                                <th>Nomer Part</th>
-                                <th>Price</th>
-                                <th>Spec</th>
-                                <th>Stock</th>
-                                <th>Pieces</th>
+                                <th>NAMA</th>
+                                <th>SPEK</th>
+                                <th>LOKASI RAK</th>
+                                <th>NOMOR PART</th>
+                                <th>HARGA (IDR)</th>
+                                <th>STOCK</th>
+                                <th>SATUAN</th>
                                 <th class="col-md-1 text-center">Action</th>
                             </tr>
                         </thead>
@@ -39,11 +39,11 @@
                         @foreach ($items as $item)
                             <tr>
                                 <td class="text-center">{{ $i++ }}</td>
-                                <td><a href="{{ URL::to('rack/detail/'.$item->rackid) }}" title="">{{ $item->rackid }}</a></td>
                                 <td class="text-center"><a href="{{ URL::to('item/detail/'.$item->itemid) }}" title="">{{ $item->name}}</a></td>
+                                <td class="text-center">{{ $item->spec }}</td>
+                                <td><a href="{{ URL::to('rack/detail/'.$item->rackid) }}" title="">{{ $item->rack->code }}</a></td>
                                 <td class="text-center">{{ $item->no_part }}</td>
                                 <td class="text-center">{{ $item->price }}</td>
-                                <td class="text-center">{{ $item->spec }}</td>
                                 <td class="text-center">{{ $item->stock }}</td>
                                 <td class="text-center">{{ $item->pieces }}</td>
                                 <td class="text-center">

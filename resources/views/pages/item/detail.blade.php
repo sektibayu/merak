@@ -23,31 +23,31 @@
                     <table class="table table-striped table-hover table-bordered">
                         <tbody>
                             <tr>
-                                <th class="col-md-3">Rack ID</th>
-                                <td>{{ $item->rackid }}</td>
-                            </tr>
-                            <tr>
-                                <th>Name</th>
+                                <th>NAMA</th>
                                 <td>{{ $item->name }}</td>
                             </tr>
-                             <tr>
-                                <th>Nomer Part</th>
-                                <td>{{ $item->no_part }}</td>
-                            </tr>
                             <tr>
-                                <th>Price</th>
-                                <td>{{ $item->price }}</td>
-                            </tr>
-                            <tr>
-                                <th>Spec</th>
+                                <th>SPEK</th>
                                 <td>{{ $item->spec }}</td>
                             </tr>
                             <tr>
-                                <th>Stock</th>
+                                <th>NOMOR PART</th>
+                                <td>{{ $item->no_part }}</td>
+                            </tr>
+                            <tr>
+                                <th class="col-md-3">LOKASI RACK</th>
+                                <td>{{ $item->rack->code }}</td>
+                            </tr>
+                            <tr>
+                                <th>HARGA (IDR)</th>
+                                <td>{{ $item->price }}</td>
+                            </tr>
+                            <tr>
+                                <th>STOCK</th>
                                 <td>{{ $item->stock }}</td>
                             </tr>
                             <tr>
-                                <th>Pieces</th>
+                                <th>SATUAN</th>
                                 <td>{{ $item->pieces }}</td>
                             </tr>
                         </tbody>

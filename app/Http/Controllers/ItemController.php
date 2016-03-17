@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Item;
+use App\Rack;
 use Request;
 use Illuminate\Support\Facades\Input;
 
@@ -22,7 +23,8 @@ class ItemController extends Controller
     {
         if (Request::isMethod('get'))
         {
-            return view('pages.item.create');
+            $item['item'] = Rack::all();
+            return view('pages.item.create', $item);
         }
         else if (Request::isMethod('post'))
         {

@@ -17,33 +17,40 @@
                 <form action="" method="post" class="form-horizontal">
                     <div class="box-body">
                         <div class="form-group">
-                            <label for="inputEmail3" class="col-sm-4 control-label">Rack ID</label>
-                            <div class="col-sm-7">
-                                <input type="text" name="rackid" class="form-control" placeholder="Rack ID" required>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="inputEmail3" class="col-sm-4 control-label">Name</label>
+                            <label for="inputEmail3" class="col-sm-4 control-label">NAMA</label>
                             <div class="col-sm-7">
                                 <input type="text" name="name" class="form-control" placeholder="Name" required>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="inputEmail3" class="col-sm-4 control-label">Nomer Part</label>
+                            <label for="inputEmail3" class="col-sm-4 control-label">SPEK</label>
+                            <div class="col-sm-7">
+                                <input type="text" name="spec" class="form-control" placeholder="spec" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-4 control-label">NOMOR PART</label>
                             <div class="col-sm-7">
                                 <input type="text" name="no_part" class="form-control" placeholder="nomer part" required>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="inputEmail3" class="col-sm-4 control-label">Price</label>
+                            <label for="inputEmail3" class="col-sm-4 control-label">LOKASI RACK</label>
                             <div class="col-sm-7">
-                                <input type="text" name="price" class="form-control" placeholder="price" required>
+                                <select name = "rackid">
+                                    <option></option>
+                                    @foreach ($item as $key)
+                                        <option class="form-control" value="{{ $key->rackid }}">{{ $key->code }}</option> 
+                                    @endforeach
+                                </select>
+                                <!-- <input type="text" name="rackid" class="form-control" placeholder="Rack ID" required> -->
                             </div>
                         </div>
+                        
                         <div class="form-group">
-                            <label for="inputEmail3" class="col-sm-4 control-label">Spec</label>
+                            <label for="inputEmail3" class="col-sm-4 control-label">HARGA (IDR)</label>
                             <div class="col-sm-7">
-                                <input type="text" name="spec" class="form-control" placeholder="spec" required>
+                                <input type="text" name="price" class="form-control" placeholder="price" required>
                             </div>
                         </div>
                         <div class="form-group">
@@ -65,7 +72,7 @@
                         <div class="col-sm-7">
                             <button type="submit" class="btn btn-info pull-right">Submit</button>
                         </div>
-                  </div><!-- /.box-footer -->
+                    </div><!-- /.box-footer -->
                 </form>
             </div><!-- /.box -->
         </div><!-- /.box -->
@@ -75,6 +82,6 @@
 
 @stop
 @section('custom_foot')
-    <script type="text/javascript">
-    </script>
+<script type="text/javascript">
+</script>
 @stop

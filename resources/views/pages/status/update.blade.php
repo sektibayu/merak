@@ -19,7 +19,7 @@
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-4 control-label">Desc</label>
                             <div class="col-sm-7">
-                                <input type="text" name="desc" class="form-control" value="{{ $items->desc }}" required>
+                                <input type="date" name="desc" class="form-control" value="{{ $items->desc }}" required>
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             </div>
                         </div>

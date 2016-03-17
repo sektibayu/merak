@@ -27,7 +27,7 @@
                             </div>
                             <label for="inputEmail3" class="col-sm-4 control-label">time</label>
                             <div class="col-sm-7">
-                                <input class="form-control" name="time" placeholder="YYYY-MM-DD" type="text">
+                                <input class="form-control" name="time" placeholder="YYYY-MM-DD" type="date">
                             </div>
                         </div>
                     </div><!-- /.box-body -->

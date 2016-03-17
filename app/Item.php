@@ -21,6 +21,7 @@ class Item extends Model
     	'pieces'
     ];
     public function rack(){
-        return $this->belongTo(Rack::class);
+        // return $this->belongsTo('Rack::class');
+        return $this->belongsTo('App\Rack', 'rackid', 'rackid');
     }
 }
