@@ -17,17 +17,27 @@
                 <form action="" method="post" class="form-horizontal">
                     <div class="box-body">
                         <div class="form-group">
-                            <label for="inputEmail3" class="col-sm-4 control-label">userid</label>
+                            <label for="inputEmail3" class="col-sm-4 control-label">USERNAME</label>
                             <div class="col-sm-7">
                                 <input type="text" name="userid" class="form-control" placeholder="user id" required>
                             </div>
-                            <label for="inputEmail3" class="col-sm-4 control-label">statusid</label>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-4 control-label">KETERANGAN</label>
                             <div class="col-sm-7">
-                                <input type="text" name="statusid" class="form-control" placeholder="status id" required>
+                                <select name = "statusid" required>
+                                    <option></option>
+                                    @foreach ($status as $key)
+                                    <option class="form-control" value="{{ $key->statusid }}">{{ $key->desc }}</option> 
+                                    @endforeach
+                                </select>
+                                <!-- <input type="text" name="statusid" class="form-control" placeholder="status id" required> -->
                             </div>
-                            <label for="inputEmail3" class="col-sm-4 control-label">time</label>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-4 control-label">WAKTU</label>
                             <div class="col-sm-7">
-                                <input class="form-control" name="time" placeholder="YYYY-MM-DD" type="date">
+                                <input class="form-control" name="time" placeholder="YYYY-MM-DD" type="datetime">
                             </div>
                         </div>
                     </div><!-- /.box-body -->
@@ -37,7 +47,7 @@
                         <div class="col-sm-7">
                             <button type="submit" class="btn btn-info pull-right">Submit</button>
                         </div>
-                  </div><!-- /.box-footer -->
+                    </div><!-- /.box-footer -->
                 </form>
             </div><!-- /.box -->
         </div><!-- /.box -->
@@ -47,6 +57,6 @@
 
 @stop
 @section('custom_foot')
-    <script type="text/javascript">
-    </script>
+<script type="text/javascript">
+</script>
 @stop

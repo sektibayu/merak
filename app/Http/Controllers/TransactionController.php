@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Status;
 use App\Transaction;
 use Request;
 use Illuminate\Support\Facades\Input;
@@ -22,7 +23,8 @@ class TransactionController extends Controller
     {
         if (Request::isMethod('get'))
         {
-            return view('pages.transaction.create');
+            $data['status'] = Status::all();
+            return view('pages.transaction.create', $data);
         }
         else if (Request::isMethod('post'))
         {

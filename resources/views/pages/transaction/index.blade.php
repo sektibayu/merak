@@ -2,7 +2,7 @@
 @section('content')
 @include('partials.flash-overlay-modal')
 <section class="content-header">
-    <h1>User</h1>
+    <h1>Transaksi</h1>
 </section>
 <section class="content">
     <div class="row">
@@ -24,9 +24,9 @@
                         <thead>
                             <tr>
                                 <th class="col-md-1">No.</th>
-                                <th>Time</th>
-                                <th>Userid</th>
-                                <th>Statusid</th>
+                                <th>WAKTU</th>
+                                <th>USERNAME</th>
+                                <th>KETERANGAN</th>
                                 <th class="col-md-1 text-center">Aksi</th>
                             </tr>
                         </thead>
