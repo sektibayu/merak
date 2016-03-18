@@ -25,7 +25,6 @@
                             <tr>
                                 <th class="col-md-1">No.</th>
                                 <th>Nama</th>
-                                <th>used</th>
                                 <th>Enable</th>
                                 <th class="col-md-1 text-center">Aksi</th>
                             </tr>
@@ -36,7 +35,6 @@
                             <tr>
                                 <td class="text-center">{{ $i++ }}</td>
                                 <td><a href="{{ URL::to('rack/detail/'.$item->rackid) }}" title="">{{ $item->code }}</a></td>
-                                <td class="text-center">{{ $item->used ? 'Ya' : 'Tidak' }}</td>
                                 <td class="text-center">{{ $item->enabled ? 'Ya' : 'Tidak' }}</td>
                                 <td class="text-center">
                                 <a href="{{ URL::to('rack/update/' . $item->rackid) }}" class="btn btn-primary btn-xs"title="Sunting"><span class="glyphicon glyphicon-pencil"></span></a>
@@ -50,7 +48,7 @@
                                                     <h4 class="modal-title" id="myModalLabel">Hapus Rak?</h4>
                                                 </div>
                                                 <div class="modal-body">
-                                                    Apakah anda yakin menghapus ? <br><br><br> klik "Ok!!" untuk konfirmasi
+                                                    Apakah anda yakin menghapus "{{$item->code}}"? <br><br><br> klik "Ok!!" untuk konfirmasi
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>

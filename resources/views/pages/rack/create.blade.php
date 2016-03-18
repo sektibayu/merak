@@ -21,7 +21,6 @@
                             <div class="col-sm-7">
                                 <input type="text" name="code" class="form-control" placeholder="Kode Rak" required>
                                 <input type="hidden" name="enabled" value="1">
-                                <input type="hidden" name="used" value="1">
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             </div>
                         </div>

@@ -24,4 +24,7 @@ class Item extends Model
         // return $this->belongsTo('Rack::class');
         return $this->belongsTo('App\Rack', 'rackid', 'rackid');
     }
+    public function transaction(){
+        return $this->hasOne('App\Transaction','itemid','itemid');
+    }
 }

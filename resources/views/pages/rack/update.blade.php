@@ -24,15 +24,6 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="inputEmail3" class="col-sm-4 control-label">used</label>
-                            <div class="col-sm-7">
-                                <select class="selecter form-control" name="used">
-                                    <option value="1" @if ($items->used == '1') {{ 'selected' }} @endif >Ya</option>
-                                    <option value="0" @if ($items->used == '0') {{ 'selected' }} @endif >Tidak</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="form-group">
                             <label for="inputEmail3" class="col-sm-4 control-label">Enabled</label>
                             <div class="col-sm-7">
                                 <select class="selecter form-control" name="enabled">

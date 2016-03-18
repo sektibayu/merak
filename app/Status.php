@@ -14,8 +14,8 @@ class Status extends Model
     protected $fillable = [
     	'desc'
     ];
-    
+
     public function transaction(){
-    	return $this->belongsTo(Transaction::class);
+        return $this->hasMany('App\Transaction', 'transactionid', 'transactionid');
     }
 }

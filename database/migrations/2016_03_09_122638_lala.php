@@ -16,7 +16,7 @@ class Lala extends Migration
         {
             $table->increments('rackid');
             $table->string('code');
-            $table->string('used');
+//            $table->string('used');
             $table->boolean('enabled');
         });
 
@@ -32,20 +32,24 @@ class Lala extends Migration
             $table->string('pieces');
         });
 
-        Schema::create('ItemTransaction',function(Blueprint $table)
-        {
-            $table->integer('itemid');
-            $table->integer('transactionid');
-            $table->integer('count');
-            $table->string('desc');
-        });
+//        Schema::create('ItemTransaction',function(Blueprint $table)
+//        {
+//            $table->integer('itemid');
+//            $table->integer('transactionid');
+//            $table->integer('count');
+//            $table->string('desc');
+//        });
 
         Schema::create('Transaction',function(Blueprint $table)
         {
             $table->increments('transactionid');
             $table->timestamp('time');
             $table->integer('userid');
+            $table->boolean('inout');
+            $table->integer('itemid');
             $table->integer('statusid');
+            $table->integer('count');
+            $table->integer('tmp_stock');
         });
 
         Schema::create('Status',function(Blueprint $table)
@@ -72,7 +76,7 @@ class Lala extends Migration
     {
         Schema::dropIfExists('Rack');
         Schema::dropIfExists('Item');
-        Schema::dropIfExists('ItemTransaction');
+//        Schema::dropIfExists('ItemTransaction');
         Schema::dropIfExists('Transaction');
         Schema::dropIfExists('Status');
         Schema::dropIfExists('User');

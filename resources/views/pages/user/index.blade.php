@@ -26,7 +26,6 @@
                                 <th class="col-md-1">No.</th>
                                 <th>Nama</th>
                                 <th>Username</th>
-                                <th>Password</th>
                                 <th class="col-md-1 text-center">Aksi</th>
                             </tr>
                         </thead>
@@ -37,7 +36,6 @@
                                 <td class="text-center">{{ $i++ }}</td>
                                 <td><a href="{{ URL::to('user/detail/'.$item->userid) }}" title="">{{ $item->name }}</a></td>
                                 <td class="text-center">{{ $item->username}}</td>
-                                <td class="text-center">{{ $item->password }}</td>
                                 <td class="text-center">
                                 <a href="{{ URL::to('user/update/' . $item->userid) }}" class="btn btn-primary btn-xs"title="Sunting"><span class="glyphicon glyphicon-pencil"></span></a>
                                     <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#modal{{$i}}"><span class="glyphicon glyphicon-remove"></span></button>

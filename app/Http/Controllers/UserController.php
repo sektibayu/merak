@@ -27,6 +27,8 @@ class userController extends Controller
         else if (Request::isMethod('post'))
         {
             $user = user::create(Input::all());
+            $user->password = md5(md5(Input::get('password')));
+            $user->save();
             return redirect('user');
         }
     }
@@ -44,6 +46,7 @@ class userController extends Controller
         {
             $user = User::find($id);
             $user->update(Input::all());
+            $user->password = md5(md5(Input::get('password')));
             $user->save();
 
             return redirect('user');

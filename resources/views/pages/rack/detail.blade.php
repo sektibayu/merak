@@ -27,10 +27,6 @@
                                 <td>{{ $item->code }}</td>
                             </tr>
                             <tr>
-                                <th>Used</th>
-                                <td>{{ $item->used ? 'Ya' : 'Tidak' }}</td>
-                            </tr>
-                            <tr>
                                 <th>Enabled</th>
                                 <td>{{ $item->enabled ? 'Ya' : 'Tidak' }}</td>
                             </tr>

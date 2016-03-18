@@ -12,10 +12,9 @@ class Rack extends Model
     public $timestamps = false;
     protected $fillable = array(
         'code',
-        'used',
         'enabled',
     );
     public function items(){
-    	return $this->hasMany(Item::class);
+    	return $this->hasMany('App\Item', 'rackid', 'rackid');
     }
 }

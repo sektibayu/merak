@@ -12,12 +12,18 @@ class Transaction extends Model
     protected $fillable=[
     'time',
     'userid',
-    'statusid'
+    'itemid',
+    'inout',
+    'statusid',
+    'tmp_stock'
     ];
     public function user(){
-    	return $this->belongsTo(User::class);
+    	return $this->belongsTo('App\User','userid','userid');
     }
     public function status(){
-    	return $this->hasOne('App\Status','statusid','statusid');
+    	return $this->belongsTo('App\Status','statusid','statusid');
+    }
+    public function item(){
+        return $this->hasOne('App\Item','itemid','itemid');
     }
 }
