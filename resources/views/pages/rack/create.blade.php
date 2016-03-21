@@ -31,7 +31,7 @@
                         <div class="col-sm-7">
                             <button type="submit" class="btn btn-info pull-right">Submit</button>
                         </div>
-                  </div><!-- /.box-footer -->
+                    </div><!-- /.box-footer -->
                 </form>
             </div><!-- /.box -->
         </div><!-- /.box -->
@@ -41,6 +41,6 @@
 
 @stop
 @section('custom_foot')
-    <script type="text/javascript">
-    </script>
+<script type="text/javascript">
+</script>
 @stop

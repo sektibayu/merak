@@ -40,13 +40,11 @@
                                 <select name = "rackid">
                                     <option></option>
                                     @foreach ($item as $key)
-                                        <option class="form-control" value="{{ $key->rackid }}">{{ $key->code }}</option> 
+                                    <option class="form-control" value="{{ $key->rackid }}">{{ $key->code }}</option> 
                                     @endforeach
                                 </select>
-                                <!-- <input type="text" name="rackid" class="form-control" placeholder="Rack ID" required> -->
                             </div>
                         </div>
-                        
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-4 control-label">HARGA (IDR)</label>
                             <div class="col-sm-7">
@@ -56,7 +54,7 @@
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-4 control-label">Pieces</label>
                             <div class="col-sm-7">
-                                <input type="number" name="pieces" class="form-control" placeholder="PCS" required>
+                                <input type="text" name="pieces" class="form-control" placeholder="PCS" required>
                             </div>
                         </div>
                     </div><!-- /.box-body -->

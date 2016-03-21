@@ -70,3 +70,8 @@ Route::post('transaction/create', array('before' => 'csrf', 'uses' => 'Transacti
 Route::get ('transaction/update/{id}', 'TransactionController@update');
 Route::post('transaction/update/{id}', array('before' => 'csrf', 'uses' => 'TransactionController@update'));
 Route::get ('transaction/delete/{id}', 'TransactionController@delete');
+
+Route::get ('ekstra', 'EkstraController@index');
+Route::get ('ekstra/printsaldo', 'EkstraController@exportLaravel');
+
+

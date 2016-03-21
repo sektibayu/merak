@@ -74,7 +74,7 @@
             </a>
         </li>
         <li class="treeview" >
-            <a href="#">
+            <a href="{{URL::to('ekstra')}}">
                 <i class="fa fa-folder"></i>
                 <span>Ekstra</span>
                 {{--<i class="fa fa-angle-left pull-right"></i>--}}
