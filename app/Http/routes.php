@@ -68,8 +68,19 @@ Route::get ('transaction/detail/{id}', 'TransactionController@detail');
 Route::get ('transaction/create', 'TransactionController@create');
 Route::post('transaction/create', array('before' => 'csrf', 'uses' => 'TransactionController@create'));
 Route::get ('transaction/update/{id}', 'TransactionController@update');
-Route::post('transaction/update/{id}', array('before' => 'csrf', 'uses' => 'TransactionController@update'));
+Route::post('transaction/update/{minmax}/{id}', array('before' => 'csrf', 'uses' => 'TransactionController@update'));
 Route::get ('transaction/delete/{id}', 'TransactionController@delete');
+
+Route::get('kartubarang', 'KartuBarangController@index');
+Route::get ('kartubarang/detail/{id}', 'KartuBarangController@detail');
+Route::post('kartubarang/detail/{id}', array('before'=>'csrf','uses'=> 'KartuBarangController@detail'));
+Route::get ('kartubarang/create', 'KartuBarangController@create');
+Route::post('kartubarang/create', array('before' => 'csrf', 'uses' => 'KartuBarangController@create'));
+Route::get ('kartubarang/update/{id}', 'KartuBarangController@update');
+Route::post('kartubarang/update/{id}', array('before' => 'csrf', 'uses' => 'KartuBarangController@update'));
+Route::get ('kartubarang/delete/{id}', 'KartuBarangController@delete');
+
+Route::get('registrasibarang', 'RegistrasiBarangController@index');
 
 Route::get ('ekstra', 'EkstraController@index');
 Route::get ('ekstra/printsaldo', 'EkstraController@exportLaravel');

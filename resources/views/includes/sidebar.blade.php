@@ -53,14 +53,14 @@
         </ul>
     </li>
     <li class="treeview" >
-        <a href="#">
+        <a href="{{URL::to('kartubarang')}}">
             <i class="fa fa-folder"></i>
             <span>Kartu Barang</span>
             {{--<i class="fa fa-angle-left pull-right"></i>--}}
         </a>
     </li>
     <li class="treeview" >
-        <a href="#">
+        <a href="{{URL::to('registrasibarang')}}">
             <i class="fa fa-folder"></i>
             <span>Registrasi Pengeluaran Barang</span>
             {{--<i class="fa fa-angle-left pull-right"></i>--}}
