@@ -23,6 +23,7 @@ class KartuBarangController extends Controller
         $share['transactions'] = DB::table('Transaction')->where('itemid','=',$id)->get();
         if(Request::isMethod('get')){
             $share['item'] = Item::find($id);
+            $share['status'] = Item::get();
             return view('pages.kartuBarang.detail', $share);
         }else if(Request::isMethod('post')){
             $share['transaction'] = Transaction::create([
