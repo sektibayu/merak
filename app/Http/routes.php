@@ -86,4 +86,5 @@ Route::get('registrasibarang', 'RegistrasiBarangController@index');
 Route::get ('ekstra', 'EkstraController@index');
 Route::get ('ekstra/printsaldo', 'EkstraController@exportLaravel');
 
+Route::get ('porm', 'PORMController@index');
 
