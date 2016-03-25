@@ -17,6 +17,7 @@ class StatusSeeder extends Seeder
         // $data->save();
     	DB::table('status')->delete();
     	$supplier = array(
+            '-',
 	        'FRUIT RECEPTION', 
 	        'STERILIZER',
 	        'THRESER',  
@@ -33,7 +34,7 @@ class StatusSeeder extends Seeder
 	        'KOMPOSTING'
 	    );
 
-        for ($i=0; $i < 14; $i++) { 
+        for ($i=0; $i < 15; $i++) { 
         	$data = new Status;
         	$data->desc = $supplier[$i];
         	$data->save();

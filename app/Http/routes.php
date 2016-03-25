@@ -79,6 +79,7 @@ Route::post('kartubarang/create', array('before' => 'csrf', 'uses' => 'KartuBara
 Route::get ('kartubarang/update/{id}', 'KartuBarangController@update');
 Route::post('kartubarang/update/{id}', array('before' => 'csrf', 'uses' => 'KartuBarangController@update'));
 Route::get ('kartubarang/delete/{id}', 'KartuBarangController@delete');
+Route::get ('kartubarang/delTransaction/{id}', 'KartuBarangController@delTransaction');
 
 Route::get('registrasibarang', 'RegistrasiBarangController@index');
 

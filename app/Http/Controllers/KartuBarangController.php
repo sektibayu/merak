@@ -20,17 +20,22 @@ class KartuBarangController extends Controller
     }
 
     public function detail(Request $request,$id){
-        $share['transactions'] = DB::table('Transaction')->where('itemid','=',$id)->get();
+        $share['transactions'] = DB::table('Transaction')->join('Status','Transaction.statusid','=','Status.statusid')->where('itemid','=',$id)->get();
+         // $share['transactions'] =DB::select('select *from Transaction, status');
+        //$share['transactions'] = Transaction::get();
         if(Request::isMethod('get')){
             $share['item'] = Item::find($id);
-            $share['status'] = Item::get();
+            $share['status'] = Status::get();
             return view('pages.kartuBarang.detail', $share);
         }else if(Request::isMethod('post')){
+            // $datetime = request::input('date') + request::input('waktu'); 
             $share['transaction'] = Transaction::create([
-                'time'=>request::input('waktu'),
+                'time'=>request::input('date'),
+                // 'time'=>$datetime,
                 'itemid'=>$id,
                 'inout'=>request::input('plusminus'),
-                'tmp_stock'=>request::input('jumlah')
+                'tmp_stock'=>request::input('jumlah'),
+                'statusid'=>request::input('statusid')
                 ]);
             if(request::input('plusminus')=='1'){
                 $share['item'] = Item::find($id);
@@ -48,7 +53,18 @@ class KartuBarangController extends Controller
             }
         }
     }
-
+    public function delTransaction($id){
+            $transaction = Transaction::find($id);
+            $item = Item::find($transaction->itemid);
+            if($transaction->inout == '1'){
+                $item->stock = $item->stock - $transaction->tmp_stock;
+            }else if($transaction->inout == '0'){
+                $item->stock = $item->stock + $transaction->tmp_stock;
+            }
+            $item->save();
+            $transaction->delete();
+            return redirect()->back();
+    }
     public function create()
     {
         if (Request::isMethod('get'))
@@ -85,7 +101,6 @@ class KartuBarangController extends Controller
     public function delete($id)
     {
         $item = Item::find($id);;
-
         $item->delete();
         return redirect('kartubarang');
     }

@@ -20,7 +20,7 @@
                     <a href="{{ URL::to('kartubarang') }}" class="btn btn-default" title="Kembali ke Daftar"><span class="glyphicon glyphicon-list"></span></a>
                     <br><br>
                     <button class="btn btn-primary" title="Tambah" data-toggle="modal" data-target="#modalplus{{$item->itemid}}"><span class="glyphicon glyphicon-plus"></span>&nbsp;&nbsp;Tambah</button>
-                    <button class="btn btn-danger" title="Tambah" data-toggle="modal" data-target="#modalminus{{$item->itemid}}"><span class="glyphicon glyphicon-minus"></span>&nbsp;&nbsp;Keluar</button>
+                    <button class="btn btn-danger" title="Keluar" data-toggle="modal" data-target="#modalminus{{$item->itemid}}"><span class="glyphicon glyphicon-minus"></span>&nbsp;&nbsp;Keluar</button>
                     <!-- Modal -->
                     <div class="modal fade" id="modalplus{{$item->itemid}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
@@ -39,11 +39,17 @@
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label for="inputEmail3" class="col-sm-4 control-label">Waktu</label>
+                                                <label for="inputEmail3" class="col-sm-4 control-label">Tanggal</label>
                                                 <div class="col-sm-7">
-                                                    <input type="date" name="waktu" class="form-control" placeholder="DD/MM/YY" required>
+                                                    <input type="datetime-local" name="date" class="form-control" required>
                                                 </div>
                                             </div>
+                                            <!-- <div class="form-group">
+                                                <label for="inputEmail3" class="col-sm-4 control-label">Waktu</label>
+                                                <div class="col-sm-7">
+                                                    <input type="time" name="waktu" class="form-control" required>
+                                                </div>
+                                            </div> -->
                                             <div class="form-group">
                                                 <label for="inputEmail3" class="col-sm-4 control-label">Jumlah</label>
                                                 <div class="col-sm-7">
@@ -54,6 +60,11 @@
                                                 <label for="inputEmail3" class="col-sm-4 control-label">Harga Baru</label>
                                                 <div class="col-sm-7">
                                                     <input type="number" name="harga_baru" class="form-control" placeholder="harga baru" required>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="col-sm-7">
+                                                    <input type="hidden" name="statusid" class="form-control" value="1" required>
                                                 </div>
                                             </div>
                                         </div><!-- /.box-body -->
@@ -87,11 +98,17 @@
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label for="inputEmail3" class="col-sm-4 control-label">Waktu</label>
+                                                <label for="inputEmail3" class="col-sm-4 control-label">Tanggal</label>
                                                 <div class="col-sm-7">
-                                                    <input type="date" name="waktu" class="form-control" placeholder="DD/MM/YY" required>
+                                                    <input type="datetime-local" name="date" class="form-control" required>
                                                 </div>
                                             </div>
+                                            <!-- <div class="form-group">
+                                                <label for="inputEmail3" class="col-sm-4 control-label">Waktu</label>
+                                                <div class="col-sm-7">
+                                                    <input type="time" name="waktu" class="form-control" required>
+                                                </div>
+                                            </div> -->
                                             <div class="form-group">
                                                 <label for="inputEmail3" class="col-sm-4 control-label">Jumlah</label>
                                                 <div class="col-sm-7">
@@ -101,7 +118,12 @@
                                             <div class="form-group">
                                                 <label for="inputEmail3" class="col-sm-4 control-label">Keterangan</label>
                                                 <div class="col-sm-7">
-                                                    <input type="text" name="keterangan" class="form-control" placeholder="keterangan" required>
+                                                    <select name = "statusid">
+                                                    <option></option>
+                                                        @foreach ($status as $key)
+                                                        <option class="form-control" value="{{ $key->statusid }}">{{ $key->desc }}</option> 
+                                                        @endforeach
+                                                    </select>
                                                 </div>
                                             </div>
                                         </div><!-- /.box-body -->
@@ -197,9 +219,8 @@
                                     {{ $transaction->tmp_stock }}
                                 @endif
                                 </td>
-                                <td class="text-center">{{ $transaction->statusid}}</td>
+                                <td class="text-center">{{ $transaction->desc }}</td>
                                 <td class="text-center">
-                                <a href="{{ URL::to('transaction/update/' . $transaction->transactionid) }}" class="btn btn-primary btn-xs"title="Sunting"><span class="glyphicon glyphicon-pencil"></span></a>
                                     <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#modal{{$i}}"><span class="glyphicon glyphicon-remove"></span></button>
                                     <!-- Modal -->
                                     <div class="modal fade" id="modal{{$i}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -214,7 +235,7 @@
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                                                <a href="{{ URL::to('transaction/delete/' . $transaction->transactionid) }}">
+                                                <a href="{{ URL::to('kartubarang/delTransaction/' . $transaction->transactionid) }}">
                                                     <button type="button" class="btn btn-primary">Ok!!</button>
                                                 </a>
                                                 </div>
@@ -240,5 +261,6 @@
         });
     });
 </script>
+
 
 @stop

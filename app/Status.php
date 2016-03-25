@@ -16,6 +16,6 @@ class Status extends Model
     ];
 
     public function transaction(){
-        return $this->hasMany('App\Transaction', 'transactionid', 'transactionid');
+        return $this->hasMany('App\Transaction', 'Transactionid', 'Transactionid');
     }
 }
