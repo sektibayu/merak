@@ -2,7 +2,7 @@
 @section('content')
 @include('partials.flash-overlay-modal')
 <section class="content-header">
-    <h1>Item</h1>
+    <h1>Kartu Barang</h1>
 </section>
 <section class="content">
     <div class="row">
@@ -19,8 +19,8 @@
                     @endif
                     <a href="{{ URL::to('kartubarang') }}" class="btn btn-default" title="Kembali ke Daftar"><span class="glyphicon glyphicon-list"></span></a>
                     <br><br>
-                    <button class="btn btn-primary" title="Tambah" data-toggle="modal" data-target="#modalplus{{$item->itemid}}"><span class="glyphicon glyphicon-plus"></span>&nbsp;&nbsp;Tambah Stok</button>
-                    <button class="btn btn-danger" title="Tambah" data-toggle="modal" data-target="#modalminus{{$item->itemid}}"><span class="glyphicon glyphicon-minus"></span>&nbsp;&nbsp;Keluar Stok</button>
+                    <button class="btn btn-primary" title="Tambah" data-toggle="modal" data-target="#modalplus{{$item->itemid}}"><span class="glyphicon glyphicon-plus"></span>&nbsp;&nbsp;Tambah</button>
+                    <button class="btn btn-danger" title="Tambah" data-toggle="modal" data-target="#modalminus{{$item->itemid}}"><span class="glyphicon glyphicon-minus"></span>&nbsp;&nbsp;Keluar</button>
                     <!-- Modal -->
                     <div class="modal fade" id="modalplus{{$item->itemid}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
