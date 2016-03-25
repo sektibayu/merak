@@ -32,16 +32,10 @@ class EkstraController extends Controller
                     'G' => 10
                     ));
 
-                $sheet->cells('B7:G10', function($cells) {
-                    // $cells->setBorder('thin','thin','thin','thin');
+                $sheet->setBorder('B7:G10', 'thin');
+                // $sheet->cells->setAlignment('center');
 
-                    $cells->setBorder(array(
-                        'borders' => array(
-                            'top'   => array(
-                                'style' => 'thin'
-                                ),
-                            )
-                        ));
+                $sheet->cells('B:G', function($cells) {
                     $cells->setAlignment('center');
                 });
 
