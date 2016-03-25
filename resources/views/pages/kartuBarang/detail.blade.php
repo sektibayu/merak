@@ -2,7 +2,7 @@
 @section('content')
 @include('partials.flash-overlay-modal')
 <section class="content-header">
-    <h1>Item</h1>
+    <h1>Kartu Barang</h1>
 </section>
 <section class="content">
     <div class="row">
@@ -13,25 +13,25 @@
                 </div>
                 <div class="box-body">
                     <div class="col-md-12">
-                        @if ($item != null)
-                        <a href="{{ URL::to('kartubarang/update/' . $item->itemid) }}" class="btn btn-primary" title="Sunting"><span class="glyphicon glyphicon-pencil"></span></a>
-                        <a href="{{ URL::to('kartubarang/delete/' . $item->itemid) }}" class="btn btn-danger"title="Hapus"><span class="glyphicon glyphicon-remove"></span></a>
-                        @endif
-                        <a href="{{ URL::to('kartubarang') }}" class="btn btn-default" title="Kembali ke Daftar"><span class="glyphicon glyphicon-list"></span></a>
-                        <br><br>
-                        <button class="btn btn-primary" title="Tambah" data-toggle="modal" data-target="#modalplus{{$item->itemid}}"><span class="glyphicon glyphicon-plus"></span>&nbsp;&nbsp;Tambah Stok</button>
-                        <button class="btn btn-danger" title="Tambah" data-toggle="modal" data-target="#modalminus{{$item->itemid}}"><span class="glyphicon glyphicon-minus"></span>&nbsp;&nbsp;Keluar Stok</button>
-                        <!-- Modal -->
-                        <div class="modal fade" id="modalplus{{$item->itemid}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                                        <h4 class="modal-title" id="myModalLabel">Tambah Stok</h4>
-                                    </div>
-                                    <div class="modal-body">
-                                     <!-- isi table -->
-                                     <form action="" method="post" class="form-horizontal">
+                    @if ($item != null)
+                    <a href="{{ URL::to('kartubarang/update/' . $item->itemid) }}" class="btn btn-primary" title="Sunting"><span class="glyphicon glyphicon-pencil"></span></a>
+                    <a href="{{ URL::to('kartubarang/delete/' . $item->itemid) }}" class="btn btn-danger"title="Hapus"><span class="glyphicon glyphicon-remove"></span></a>
+                    @endif
+                    <a href="{{ URL::to('kartubarang') }}" class="btn btn-default" title="Kembali ke Daftar"><span class="glyphicon glyphicon-list"></span></a>
+                    <br><br>
+                    <button class="btn btn-primary" title="Tambah" data-toggle="modal" data-target="#modalplus{{$item->itemid}}"><span class="glyphicon glyphicon-plus"></span>&nbsp;&nbsp;Tambah</button>
+                    <button class="btn btn-danger" title="Tambah" data-toggle="modal" data-target="#modalminus{{$item->itemid}}"><span class="glyphicon glyphicon-minus"></span>&nbsp;&nbsp;Keluar</button>
+                    <!-- Modal -->
+                    <div class="modal fade" id="modalplus{{$item->itemid}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                    <h4 class="modal-title" id="myModalLabel">Tambah Stok</h4>
+                                </div>
+                                <div class="modal-body">
+                                   <!-- isi table -->
+                                    <form action="" method="post" class="form-horizontal">
                                         <div class="box-body">
                                             <div class="form-group">
                                                 <div class="col-sm-7">
@@ -78,39 +78,30 @@
                                     <h4 class="modal-title" id="myModalLabel">Keluar Stok</h4>
                                 </div>
                                 <div class="modal-body">
-                                 <!-- isi table -->
-                                 <form action="" method="post" class="form-horizontal">
-                                    <div class="box-body">
-                                        <div class="form-group">
-                                            <div class="col-sm-7">
-                                                <input type="hidden" name="plusminus" class="form-control" value="0" required>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="inputEmail3" class="col-sm-4 control-label">Waktu</label>
-                                            <div class="col-sm-7">
-                                                <input type="date" name="waktu" class="form-control" placeholder="DD/MM/YY" required>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="inputEmail3" class="col-sm-4 control-label">Jumlah</label>
-                                            <div class="col-sm-7">
-                                                <input type="number" name="jumlah" class="form-control" placeholder="jumlah" required>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="inputEmail3" class="col-sm-4 control-label">Keterangan</label>
-                                                <!-- <div class="col-sm-7">
-                                                    <input type="text" name="keterangan" class="form-control" placeholder="keterangan" required>
-                                                </div> -->
+                                   <!-- isi table -->
+                                   <form action="" method="post" class="form-horizontal">
+                                        <div class="box-body">
+                                            <div class="form-group">
                                                 <div class="col-sm-7">
-                                                    <select name = "statusid" required>
-                                                        <option></option>
-                                                        @foreach ($status as $key)
-                                                        <option class="form-control" value="{{ $key->statusid }}">{{ $key->desc }}</option> 
-                                                        @endforeach
-                                                    </select>
-                                                    <!-- <input type="text" name="statusid" class="form-control" placeholder="status id" required> -->
+                                                    <input type="hidden" name="plusminus" class="form-control" value="0" required>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="inputEmail3" class="col-sm-4 control-label">Waktu</label>
+                                                <div class="col-sm-7">
+                                                    <input type="date" name="waktu" class="form-control" placeholder="DD/MM/YY" required>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="inputEmail3" class="col-sm-4 control-label">Jumlah</label>
+                                                <div class="col-sm-7">
+                                                    <input type="number" name="jumlah" class="form-control" placeholder="jumlah" required>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="inputEmail3" class="col-sm-4 control-label">Keterangan</label>
+                                                <div class="col-sm-7">
+                                                    <input type="text" name="keterangan" class="form-control" placeholder="keterangan" required>
                                                 </div>
                                             </div>
                                         </div><!-- /.box-body -->
@@ -163,10 +154,10 @@
                     </table>
                     @endif
                 </div>
+                </div>
             </div>
         </div>
     </div>
-</div>
 </section>
 <section class="content">
     <div class="row">
@@ -191,24 +182,24 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <?php $i = 1; ?>
-                            @foreach ($transactions as $transaction)
+                        <?php $i = 1; ?>
+                        @foreach ($transactions as $transaction)
                             <tr>
                                 <td class="text-center">{{ $i++ }}</td>
                                 <td class="text-center">{{ $transaction->time}}</td>
                                 <td class="text-center">
-                                    @if($transaction->inout == '1')
+                                @if($transaction->inout == '1')
                                     {{ $transaction->tmp_stock }}
-                                    @endif
+                                @endif
                                 </td>
                                 <td class="text-center">
-                                    @if($transaction->inout == '0')
+                                @if($transaction->inout == '0')
                                     {{ $transaction->tmp_stock }}
-                                    @endif
+                                @endif
                                 </td>
                                 <td class="text-center">{{ $transaction->statusid}}</td>
                                 <td class="text-center">
-                                    <a href="{{ URL::to('transaction/update/' . $transaction->transactionid) }}" class="btn btn-primary btn-xs"title="Sunting"><span class="glyphicon glyphicon-pencil"></span></a>
+                                <a href="{{ URL::to('transaction/update/' . $transaction->transactionid) }}" class="btn btn-primary btn-xs"title="Sunting"><span class="glyphicon glyphicon-pencil"></span></a>
                                     <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#modal{{$i}}"><span class="glyphicon glyphicon-remove"></span></button>
                                     <!-- Modal -->
                                     <div class="modal fade" id="modal{{$i}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -223,16 +214,16 @@
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                                                    <a href="{{ URL::to('transaction/delete/' . $transaction->transactionid) }}">
-                                                        <button type="button" class="btn btn-primary">Ok!!</button>
-                                                    </a>
+                                                <a href="{{ URL::to('transaction/delete/' . $transaction->transactionid) }}">
+                                                    <button type="button" class="btn btn-primary">Ok!!</button>
+                                                </a>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </td>
                             </tr>
-                            @endforeach
+                        @endforeach
                         </tbody>
                     </table>
                 </div>
@@ -242,12 +233,12 @@
 </section>
 
 <script department="text/javascript">
-$(document).ready(function(){
-    $(function() {
-        $('#table-department').dataTable();
-        $('#flash-overlay-modal').modal();
+    $(document).ready(function(){
+        $(function() {
+            $('#table-department').dataTable();
+            $('#flash-overlay-modal').modal();
+        });
     });
-});
 </script>
 
 @stop

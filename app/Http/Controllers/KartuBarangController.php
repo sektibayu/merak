@@ -23,7 +23,6 @@ class KartuBarangController extends Controller
         $share['transactions'] = DB::table('Transaction')->where('itemid','=',$id)->get();
         if(Request::isMethod('get')){
             $share['item'] = Item::find($id);
-            $share['status'] = Status::get();
             return view('pages.kartuBarang.detail', $share);
         }else if(Request::isMethod('post')){
             $share['transaction'] = Transaction::create([
@@ -37,12 +36,14 @@ class KartuBarangController extends Controller
                 $share['item']->price = ((( $share['item']->price * $share['item']->stock ) + (request::input('harga_baru') * request::input('jumlah')))/($share['item']->stock + request::input('jumlah')));
                 $share['item']->stock = $share['item']->stock + request::input('jumlah');
                 $share['item']->save();
-                return view('pages.kartuBarang.detail',$share);
+                return redirect()->back();
+                // return view('pages.kartuBarang.detail',$share);
             }elseif(request::input('plusminus')=='0') {
                 $share['item'] = Item::find($id);
                 $share['item']->stock = $share['item']->stock - request::input('jumlah');
                 $share['item']->save();
-                return view('pages.kartuBarang.detail',$share);
+                return redirect()->back();
+                // return view('pages.kartuBarang.detail',$share);
             }
         }
     }

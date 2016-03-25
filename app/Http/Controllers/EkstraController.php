@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Item;
-use App\Transaction;
 use Request;
 use Illuminate\Support\Facades\Input;
 use Excel;
@@ -23,6 +22,7 @@ class EkstraController extends Controller
     		$excel->setTitle('DATA SELURUH ITEM');
     		$excel->sheet('DATA ITEM', function($sheet) use($items){
     			$row = 7;
+<<<<<<< HEAD
                 $sheet->setWidth(array(
                     'B' => 4, 
                     'C' => 20,
@@ -79,5 +79,29 @@ public function printbon($tgl){
         //     from transaction t, item i, status s
         //     where time = $time and t.itemid = i.itemid s.statusid = t.statusid
         //     ')->;
+=======
+    			//$sheet->fromArray($items);
+    			$sheet->row($row, array(
+    				'NO',
+    				'NOMOR BARANG',
+    				'NAMA',
+    				'SPEK',
+    				'SALDO',
+    				'UM'
+    			));
+    			$no = 1;
+    			foreach ($items as $data){
+    				$sheet->row(++$row, array(
+    					$no++,
+    					$data->no_part,
+    					$data->name,
+    					$data->spec,
+    					$data->stock,
+    					$data->pieces
+    				));
+    			}
+    		});
+    	})->export('xls');
+>>>>>>> b2398432b63cda2277c38f9359aa80f08e9474db
     }
 }
