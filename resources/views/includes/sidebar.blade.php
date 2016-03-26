@@ -67,7 +67,7 @@
         </a>
     </li>
         <li class="treeview" >
-            <a href="#">
+            <a href="{{URL::to('porm')}}">
                 <i class="fa fa-folder"></i>
                 <span>Cost PO RM</span>
                 {{--<i class="fa fa-angle-left pull-right"></i>--}}
