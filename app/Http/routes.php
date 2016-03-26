@@ -79,10 +79,16 @@ Route::post('kartubarang/create', array('before' => 'csrf', 'uses' => 'KartuBara
 Route::get ('kartubarang/update/{id}', 'KartuBarangController@update');
 Route::post('kartubarang/update/{id}', array('before' => 'csrf', 'uses' => 'KartuBarangController@update'));
 Route::get ('kartubarang/delete/{id}', 'KartuBarangController@delete');
+Route::get ('kartubarang/delTransaction/{id}', 'KartuBarangController@delTransaction');
 
 Route::get('registrasibarang', 'RegistrasiBarangController@index');
 
 Route::get ('ekstra', 'EkstraController@index');
 Route::get ('ekstra/printsaldo', 'EkstraController@exportLaravel');
+<<<<<<< HEAD
 Route::get ('ekstra/printbon', array('before' => 'csrf', 'uses' => 'EkstraController@printbon'));
+=======
+
+Route::get ('porm', 'PORMController@index');
+>>>>>>> 44e0c135ee317c3c0ca35a5868e7eb6d463640d7
 
