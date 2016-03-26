@@ -90,7 +90,7 @@
                                 </div>
                                 <div class="modal-body">
                                    <!-- isi table -->
-                                   <form action="" method="" class="form-horizontal">
+                                   <form action="" method="post" class="form-horizontal">
                                         <div class="box-body">
                                             <div class="form-group">
                                                 <div class="col-sm-7">
