@@ -84,5 +84,5 @@ Route::get('registrasibarang', 'RegistrasiBarangController@index');
 
 Route::get ('ekstra', 'EkstraController@index');
 Route::get ('ekstra/printsaldo', 'EkstraController@exportLaravel');
-
+Route::get ('ekstra/printbon', array('before' => 'csrf', 'uses' => 'EkstraController@printbon'));
 
