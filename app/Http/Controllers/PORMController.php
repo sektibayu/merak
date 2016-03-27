@@ -50,6 +50,7 @@ class PORMController extends Controller
 
         $subTotal = array();
         $total = array();
+        $tot1 = 0; $tot2 = 0;
         foreach($list as $lis){
             $sum = 0;
             foreach($status as $stat) {
@@ -57,16 +58,30 @@ class PORMController extends Controller
                     $sum += $thisIs[$stat->statusid][+$lis];
                 }
             }
-            $total[+$lis] = $sum + $thisIs[14][+$lis];
             $subTotal[+$lis] = $sum;
+            $total[+$lis] = $sum + $thisIs[14][+$lis];
+            $tot1 += $subTotal[+$lis];
+            $tot2 += $total[+$lis];
         }
+        $sideTotal = array();
+        foreach($status as $stat){
+            $sum = 0;
+            foreach( $list as $lis ) {
+                $sum += $thisIs[$stat->statusid][+$lis];
+            }
+            $sideTotal[$stat->statusid] = $sum;
+        }
+
         $share['items'] = $thisIs;
         $share['subtotal'] = $subTotal;
         $share['total'] = $total;
+        $share['sidetotal'] = $sideTotal;
         $share['bulan'] = $bulan;
         $share['tahun'] = $tahun;
         $share['indeks'] = $indeks;
         $share['list'] = $list;
+        $share['tot1'] = $tot1;
+        $share['tot2'] = $tot2;
 //        dd($subTotal);
         return view('pages.porm.index', $share);
 

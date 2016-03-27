@@ -2,7 +2,7 @@
 @section('content')
     @include('partials.flash-overlay-modal')
     <section class="content-header">
-        <h1 align='center'>Statistik Nomor Surat Tak Terpakai E-Surat ITS per Unit</h1>
+        <h1 align='center'>COST PO RM</h1>
     </section>
 
     <section class="content">
@@ -78,55 +78,53 @@
             <div class="row" id="tampilanbulan">
                 <div class="box box-primary">
                     <div class="box-header with-border">
-                        <h3 class="box-title">
-                            Statistik Surat Bulan <label id='labelbln'>labelbln</label> - <label id='labelth'>labelth</label></p></p>
-                        </h3>
+                        <div class="col-md-4">
+                            <h3 class="box-title">
+                                COST PO RM <label id='labelbln'>labelbln</label> - <label id='labelth'>labelth</label></p></p>
+                            </h3>
+                        </div>
+                        <div class="col-md-8">
+                            <form action="" method="get" role="form">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <select class="selecter form-control" id='selectbln' name='bulan' required>
+                                            <option value='1'>Januari</option>
+                                            <option value='2'>Februari</option>
+                                            <option value='3'>Maret</option>
+                                            <option value='4'>April</option>
+                                            <option value='5'>Mei</option>
+                                            <option value='6'>Juni</option>
+                                            <option value='7'>Juli</option>
+                                            <option value='8'>Agustus</option>
+                                            <option value='9'>September</option>
+                                            <option value='10'>Oktober</option>
+                                            <option value='11'>Nopember</option>
+                                            <option value='12'>Desember</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <select class="selecter form-control" id='selectth' name='tahun' required>
+                                            <option value='2016'>2016</option>
+                                            <option value='2015'>2015</option>
+                                            <option value='2014'>2014</option>
+                                            <option value='2013'>2013</option>
+                                            <option value='2012'>2012</option>
+                                            <option value='2011'>2011</option>
+                                            <option value='2010'>2010</option>
+                                        </select>
+                                        <input type="hidden" name="action" value="1">
+                                    </div>
+                                </div>
+                                {!! csrf_field() !!}
+                                <div class="col-md-4">
+                                    <button class="btn btn-success" id='pilih'>Pilih</button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                     <div class="box-body">
-                        <div class="row">
-                            <div class="col-md-3">
-                            </div>
-                            <div class="col-md-9">
-                                <form action="" method="get" role="form">
-                                    <div class="col-md-3">
-                                        <div class="form-group">
-                                            <select class="selecter form-control" id='selectbln' name='bulan' required>
-                                                <option value='1'>Januari</option>
-                                                <option value='2'>Februari</option>
-                                                <option value='3'>Maret</option>
-                                                <option value='4'>April</option>
-                                                <option value='5'>Mei</option>
-                                                <option value='6'>Juni</option>
-                                                <option value='7'>Juli</option>
-                                                <option value='8'>Agustus</option>
-                                                <option value='9'>September</option>
-                                                <option value='10'>Oktober</option>
-                                                <option value='11'>Nopember</option>
-                                                <option value='12'>Desember</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="form-group">
-                                            <select class="selecter form-control" id='selectth' name='tahun' required>
-                                                <option value='2016'>2016</option>
-                                                <option value='2015'>2015</option>
-                                                <option value='2014'>2014</option>
-                                                <option value='2013'>2013</option>
-                                                <option value='2012'>2012</option>
-                                                <option value='2011'>2011</option>
-                                                <option value='2010'>2010</option>
-                                            </select>
-                                            <input type="hidden" name="action" value="1">
-                                        </div>
-                                    </div>
-                                    {!! csrf_field() !!}
-                                    <div class="col-md-3">
-                                        <button class="btn btn-success" id='pilih'>Pilih</button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
                         <div class="row">
                             <div class="col-md-12 " style="overflow-x: scroll;">
                                 <table class="table table-bordered">
@@ -136,6 +134,7 @@
                                         @foreach($list as $l)
                                             <th style="min-width: 100px; text-align: center;">{{+$l}}</th>
                                         @endforeach
+                                        <th style="min-width: 100px; text-align: center;background-color:#FFFF00;">Total</th>
                                     </tr>
                                     @foreach($items as $key => $value)
                                         @if($key != 0)
@@ -145,6 +144,7 @@
                                                 @foreach($value as $val)
                                                     <td style="text-align: center;">{{$val}}</td>
                                                 @endforeach
+                                                <td style="text-align: center;background-color:#FFFF00;">{{$sidetotal[$key]}}</td>
                                             </tr>
                                             @if($key == 13)
                                                 <tr style="background-color: #66FF00;">
@@ -153,6 +153,7 @@
                                                     @foreach($subtotal as $val)
                                                         <td style="text-align: center;">{{$val}}</td>
                                                     @endforeach
+                                                    <td style="text-align: center;background-color:#FFFF00;">{{$tot1}}</td>
                                                 </tr>
                                             @endif
                                             @if($key == 14)
@@ -162,6 +163,7 @@
                                                     @foreach($total as $val)
                                                         <td style="text-align: center;">{{$val}}</td>
                                                     @endforeach
+                                                    <td style="text-align: center;background-color:#FFFF00;">{{$tot2}}</td>
                                                 </tr>
                                             @endif
                                         @endif
