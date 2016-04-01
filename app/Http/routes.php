@@ -88,4 +88,5 @@ Route::get ('ekstra/printsaldo', 'EkstraController@exportLaravel');
 Route::get ('ekstra/printbon', array('before' => 'csrf', 'uses' => 'EkstraController@printbon'));
 
 Route::get ('porm', 'PORMController@index');
+Route::get ('login', 'UserController@login');
 

@@ -13,6 +13,11 @@ class userController extends Controller
         return view('pages.user.index', $share);
     }
 
+    public function login(){
+//        $share['items'] = User::get();
+        return view('pages.login');
+    }
+
     public function detail($id){
         $share['item'] = User::find($id);
         return view('pages.user.detail', $share);
