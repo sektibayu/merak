@@ -18,57 +18,25 @@
                     <table class="table table-striped table-hover table-bordered" id="table-department">
                         <thead>
                             <tr>
-                                <th class="col-md-1">No.</th>
-                                <th>CODE BARANG</th>
-                                <th>WAKTU</th>
-                                <th>MASUK</th>
-                                <th>KELUAR</th>
+                                <th class="col-md-1">TANGGAL</th>
+                                <th>NOMOR BARANG</th>
+                                <th>NAMA</th>
+                                <th>SPEK</th>
+                                <th>JUMLAH</th>
+                                <th>UM</th>
                                 <th>KETERANGAN</th>
-                                <th class="col-md-1 text-center">Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
-                        <?php $i = 1; ?>
                         @foreach ($items as $item)
                             <tr>
-                                <td class="text-center">{{ $i++ }}</td>
-                                <td class="text-center">{{$item->itemid}}</td>
-                                <td class="text-center">{{ $item->time}}</td>
-                                <td class="text-center">
-                                @if($item->inout == '1')
-                                    {{ $item->tmp_stock }}
-                                @endif
-                                </td>
-                                <td class="text-center">
-                                @if($item->inout == '0')
-                                    {{ $item->tmp_stock }}
-                                @endif
-                                </td>
-                                <td class="text-center">{{ $item->statusid}}</td>
-                                <td class="text-center">
-                                <a href="{{ URL::to('transaction/update/' . $item->transactionid) }}" class="btn btn-primary btn-xs"title="Sunting"><span class="glyphicon glyphicon-pencil"></span></a>
-                                    <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#modal{{$i}}"><span class="glyphicon glyphicon-remove"></span></button>
-                                    <!-- Modal -->
-                                    <div class="modal fade" id="modal{{$i}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                                                    <h4 class="modal-title" id="myModalLabel">Hapus Transaction?</h4>
-                                                </div>
-                                                <div class="modal-body">
-                                                    Apakah anda yakin menghapus ? <br><br><br> klik "Ok!!" untuk konfirmasi
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                                                <a href="{{ URL::to('transaction/delete/' . $item->transactionid) }}">
-                                                    <button type="button" class="btn btn-primary">Ok!!</button>
-                                                </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </td>
+                                <td class="text-center">{{ $item->time }}</td>
+                                <td class="text-center">{{ $item->no_part }}</td>
+                                <td class="text-center">{{ $item->name }}</td>
+                                <td class="text-center">{{ $item->spec }}</td>
+                                <td class="text-center">{{ $item->stock }}</td>
+                                <td class="text-center">{{ $item->pieces }}</td>
+                                <td class="text-center">{{ $item->desc }}</td>
                             </tr>
                         @endforeach
                         </tbody>
