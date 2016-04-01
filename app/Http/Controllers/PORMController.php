@@ -7,11 +7,20 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Status;
 use App\Transaction;
+use App\Item;
 use Illuminate\Support\Facades\Input;
 
 class PORMController extends Controller
 {
     public function index(){
+        setlocale(LC_ALL, 'IND');
+
+        $price = Item::get();
+        $prices = array();
+        foreach($price as $pri){
+            $prices[$pri->itemid] = $pri->price;
+        }
+//        dd($prices);
 
         if( Input::get('bulan') == null || Input::get('tahun') == null ){
             $bulan = date('m');
@@ -45,9 +54,9 @@ class PORMController extends Controller
         }
 
         foreach($items as $item){
-            $thisIs[$item->statusid][+substr($item->time,8,2)] += $item->count;
+            $thisIs[$item->statusid][+substr($item->time,8,2)] += $item->tmp_stock * $prices[$item->itemid];
         }
-
+//dd($thisIs);
         $subTotal = array();
         $total = array();
         $tot1 = 0; $tot2 = 0;

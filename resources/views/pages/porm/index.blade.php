@@ -142,18 +142,18 @@
                                                 <td>{{$key}}</td>
                                                 <td>{{$indeks[$key]}}</td>
                                                 @foreach($value as $val)
-                                                    <td style="text-align: center;">{{$val}}</td>
+                                                    <td style="text-align: center;">{{number_format($val)}}</td>
                                                 @endforeach
-                                                <td style="text-align: center;background-color:#FFFF00;">{{$sidetotal[$key]}}</td>
+                                                <td style="text-align: center;background-color:#FFFF00;">{{number_format($sidetotal[$key])}}</td>
                                             </tr>
                                             @if($key == 13)
                                                 <tr style="background-color: #66FF00;">
                                                     <td></td>
                                                     <td>Total</td>
                                                     @foreach($subtotal as $val)
-                                                        <td style="text-align: center;">{{$val}}</td>
+                                                        <td style="text-align: center;">{{number_format($val)}}</td>
                                                     @endforeach
-                                                    <td style="text-align: center;background-color:#FFFF00;">{{$tot1}}</td>
+                                                    <td style="text-align: center;background-color:#FFFF00;">{{number_format($tot1)}}</td>
                                                 </tr>
                                             @endif
                                             @if($key == 14)
@@ -161,9 +161,9 @@
                                                     <td></td>
                                                     <td>Grand Total</td>
                                                     @foreach($total as $val)
-                                                        <td style="text-align: center;">{{$val}}</td>
+                                                        <td style="text-align: center;">{{number_format($val)}}</td>
                                                     @endforeach
-                                                    <td style="text-align: center;background-color:#FFFF00;">{{$tot2}}</td>
+                                                    <td style="text-align: center;background-color:#FFFF00;">{{number_format($tot2)}}</td>
                                                 </tr>
                                             @endif
                                         @endif
