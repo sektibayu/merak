@@ -34,7 +34,7 @@
                                 <td class="text-center">{{ $item->no_part }}</td>
                                 <td class="text-center">{{ $item->name }}</td>
                                 <td class="text-center">{{ $item->spec }}</td>
-                                <td class="text-center">{{ $item->stock }}</td>
+                                <td class="text-center">{{ $item->tmp_stock }}</td>
                                 <td class="text-center">{{ $item->pieces }}</td>
                                 <td class="text-center">{{ $item->desc }}</td>
                             </tr>

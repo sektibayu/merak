@@ -23,6 +23,7 @@
 <script type="text/javascript" src="{{ URL::to('assets/js/jquery.min.js') }}"></script>
 <script type="text/javascript" src="{{ URL::to('assets/js/jquery-1.10.2.js') }}"></script>
 <script type="text/javascript" src="{{ URL::to('assets/js/jquery-ui.js') }}"></script>
+<!-- <script type="text/javascript" src="{{URL::to('assets/js/angular.min.js')}}"></script> -->
 
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>

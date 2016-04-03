@@ -26,11 +26,11 @@
                                 <th class="col-md-1">No.</th>
                                 <th>NAMA</th>
                                 <th>SPEK</th>
-                                <th>LOKASI RAK</th>
+                                <!-- <th>LOKASI RAK</th> -->
                                 <th>NOMOR PART</th>
-                                <th>HARGA (IDR)</th>
-                                <th>STOCK</th>
-                                <th>SATUAN</th>
+                                <!-- <th>HARGA (IDR)</th> -->
+                                <!-- <th>STOCK</th> -->
+                                <!-- <th>SATUAN</th> -->
                                 <th class="col-md-1 text-center">Action</th>
                             </tr>
                         </thead>
@@ -41,11 +41,11 @@
                                 <td class="text-center">{{ $i++ }}</td>
                                 <td class="text-center"><a href="{{ URL::to('kartubarang/detail/'.$item->itemid) }}" title="">{{ $item->name}}</a></td>
                                 <td class="text-center">{{ $item->spec }}</td>
-                                <td><a href="{{ URL::to('rack/detail/'.$item->rackid) }}" title="">{{ $item->rack->code }}</a></td>
+                                <!-- <td><a href="{{ URL::to('rack/detail/'.$item->rackid) }}" title="">{{ $item->rack->code }}</a></td> -->
                                 <td class="text-center">{{ $item->no_part }}</td>
-                                <td class="text-center">{{ $item->price }}</td>
-                                <td class="text-center">{{ $item->stock }}</td>
-                                <td class="text-center">{{ $item->pieces }}</td>
+                                <!-- <td class="text-center">{{ $item->price }}</td> -->
+                                <!-- <td class="text-center">{{ $item->stock }}</td> -->
+                                <!-- <td class="text-center">{{ $item->pieces }}</td> -->
                                 <td class="text-center">
                                 <a href="{{ URL::to('kartubarang/update/' . $item->itemid) }}" class="btn btn-primary btn-xs"title="Sunting"><span class="glyphicon glyphicon-pencil"></span></a>
                                     <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#modal{{$i}}"><span class="glyphicon glyphicon-remove"></span></button>
