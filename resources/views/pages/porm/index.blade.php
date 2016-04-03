@@ -132,7 +132,7 @@
                                         <th style="width: 10px">#</th>
                                         <th style="min-width: 250px;">Station</th>
                                         @foreach($list as $l)
-                                            <th style="min-width: 100px; text-align: center;">{{+$l}}</th>
+                                            <th style="min-width: 100px; text-align: center;">{{+$l}}<br>{{$hari[+$l]}}</th>
                                         @endforeach
                                         <th style="min-width: 100px; text-align: center;background-color:#FFFF00;">Total</th>
                                     </tr>

@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Status;
 use App\Transaction;
 use App\Item;
+use DateTime;
 use Illuminate\Support\Facades\Input;
 
 class PORMController extends Controller
@@ -31,12 +32,32 @@ class PORMController extends Controller
         }
 
         $list=array();
-
+        $hari = array();
         for($d=1; $d<=31; $d++)
         {
             $time=mktime(12, 0, 0, $bulan, $d, $tahun);
             if (date('m', $time)==$bulan)
                 $list[]=date('d', $time);
+        }
+
+        foreach($list as $value){
+            $string = $tahun."-".$bulan."-".$value;
+            $date = DateTime::createFromFormat("Y-m-d", $string);
+            if($date->format("D") == "Sun") {
+                $hari[+$value] = "Minggu";
+            } else if($date->format("D") == "Mon") {
+                $hari[+$value] = "Senin";
+            } else if($date->format("D") == "Tue") {
+                $hari[+$value] = "Selasa";
+            } else if($date->format("D") == "Wed") {
+                $hari[+$value] = "Rabu";
+            } else if($date->format("D") == "Thu") {
+                $hari[+$value] = "Kamis";
+            } else if($date->format("D") == "Fri") {
+                $hari[+$value] = "Jumat";
+            } else if($date->format("D") == "Sat") {
+                $hari[+$value] = "Sabtu";
+            }
         }
 
         $items = Transaction::whereMonth('time', '=', $bulan)->whereYear('time', '=', $tahun)->get();
@@ -91,6 +112,7 @@ class PORMController extends Controller
         $share['list'] = $list;
         $share['tot1'] = $tot1;
         $share['tot2'] = $tot2;
+        $share['hari'] = $hari;
 //        dd($subTotal);
         return view('pages.porm.index', $share);
 
