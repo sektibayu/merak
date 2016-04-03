@@ -112,7 +112,7 @@
                                             <div class="form-group">
                                                 <label for="inputEmail3" class="col-sm-4 control-label">Jumlah</label>
                                                 <div class="col-sm-7">
-                                                    <input type="number" name="jumlah" class="form-control" placeholder="jumlah" id="jumlahan" onchange="submitbtn()"  required>
+                                                    <input type="number" name="jumlah" class="form-control" placeholder="jumlah" id="jumlahan" max="{{$item->stock}}" required>
                                                     <input type="hidden" id="stock" value="{{ $item->stock }}">
                                                 </div>
                                             </div>
@@ -135,8 +135,8 @@
                                             </div>
                                             <div class="col-sm-7">
                                                 <button type="button" class="btn btn-default pull-right" data-dismiss="modal">Cancel</button>
-                                               
-                                                    <div id="btn"></div>
+
+                                                <button type='submit' class='btn btn-info pull-left'>Submit</button>
 
                                             </div>
                                         </div><!-- /.box-footer -->
@@ -267,16 +267,16 @@
     });
 </script>
 
-<script>
-function submitbtn() {
-    var x = document.getElementById("jumlahan").value;
-    var y = document.getElementById("stock").value;
-    if(y >= x){
-        document.getElementById("btn").innerHTML = "<button type='submit' class='btn btn-info pull-left'>Submit</button>" ;
-    }else{
-        document.getElementById("btn").innerHTML = "lala";
-    }
-}
-</script>
+{{--<script>--}}
+{{--function submitbtn() {--}}
+    {{--var x = document.getElementById("jumlahan").value;--}}
+    {{--var y = document.getElementById("stock").value;--}}
+    {{--if(y >= x){--}}
+        {{--document.getElementById("btn").innerHTML = "" ;--}}
+    {{--}else{--}}
+        {{--document.getElementById("btn").innerHTML = "";--}}
+    {{--}--}}
+{{--}--}}
+{{--</script>--}}
 
 @stop
