@@ -109,6 +109,7 @@
                                                     <input type="time" name="waktu" class="form-control" required>
                                                 </div>
                                             </div> -->
+                                            {!! csrf_field() !!}
                                             <div class="form-group">
                                                 <label for="inputEmail3" class="col-sm-4 control-label">Jumlah</label>
                                                 <div class="col-sm-7">
