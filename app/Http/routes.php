@@ -4,12 +4,7 @@
 Route::group(['middleware' => 'web'], function () {
     Route::auth();
 
-    Route::get('/home', 'HomeController@index');
-
-
-    Route::get('/', function () {
-        return view('pages.dashboard');
-    });
+    Route::get('/', 'HomeController@index');
 
     Route::get ('rack', 'RackController@index');
     Route::get ('rack/detail/{id}', 'RackController@detail');

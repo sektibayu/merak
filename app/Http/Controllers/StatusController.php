@@ -8,6 +8,10 @@ use Illuminate\Support\Facades\Input;
 
 class StatusController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth');
+    }
+    
     public function index(){
         $share['items'] = Status::get();
         return view('pages.status.index', $share);

@@ -14,6 +14,10 @@ use Illuminate\Support\Facades\Input;
 
 class KartuBarangController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth');
+    }
+
      public function index(){
         $share['items'] = Item::get();
         return view('pages.kartuBarang.index', $share);

@@ -12,6 +12,10 @@ use DB;
 
 class RegistrasiBarangController extends Controller
 {
+	public function __construct(){
+        $this->middleware('auth');
+    }
+	
     public function index(){
         $share['items'] = DB::Table('Transaction')->join('Item','Transaction.itemid','=','Item.itemid')->join('Status','Transaction.statusid','=','Status.statusid')->where('inout','=','0')->get();
         return view('pages.registrasiBarang.index', $share);

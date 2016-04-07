@@ -8,6 +8,10 @@ use Illuminate\Support\Facades\Input;
 
 class RackController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth');
+    }
+    
     public function index(){
         $share['items'] = Rack::get();
         return view('pages.rack.index', $share);

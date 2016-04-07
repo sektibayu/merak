@@ -8,6 +8,10 @@ use Illuminate\Support\Facades\Input;
 
 class userController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth');
+    }
+    
     public function index(){
         $share['items'] = User::get();
         return view('pages.user.index', $share);
@@ -32,7 +36,7 @@ class userController extends Controller
         else if (Request::isMethod('post'))
         {
             $user = user::create(Input::all());
-            $user->password = md5(md5(Input::get('password')));
+            $user->password = bcrypt(Input::get('password'));
             $user->save();
             return redirect('user');
         }
@@ -51,7 +55,7 @@ class userController extends Controller
         {
             $user = User::find($id);
             $user->update(Input::all());
-            $user->password = md5(md5(Input::get('password')));
+            $user->password = bcrypt(Input::get('password'));
             $user->save();
 
             return redirect('user');

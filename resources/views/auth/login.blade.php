@@ -1,62 +1,163 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Merak</title>
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
 
-@section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Login</div>
-                <div class="panel-body">
-                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
-                        {!! csrf_field() !!}
+    <link rel="shortcut icon" href="{{ URL::to('favicon.ico') }}"/>
 
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label class="col-md-4 control-label">Username</label>
+    <link href="{{ URL::to('assets/adminlte/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ URL::to('assets/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ URL::to('assets/adminlte/plugins/datatables/dataTables.bootstrap.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ URL::to('assets/adminlte/plugins/timepicker/bootstrap-timepicker.min.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ URL::to('assets/adminlte/plugins/daterangepicker/daterangepicker-bs3.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ URL::to('assets/adminlte/plugins/fullcalendar/fullcalendar.min.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ URL::to('assets/adminlte/dist/css/AdminLTE.min.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ URL::to('assets/adminlte/dist/css/skins/skin-green.min.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ URL::to('assets/bootstrap/css/bootstrap-datetimepicker.min.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ URL::to('assets/css/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css') }}" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="{{ URL::to('assets/adminlte/plugins/select2/select2.min.css') }}" type="text/css">
 
-                            <div class="col-md-6">
-                                <input type="text" class="form-control" name="email" value="">
+    <script type="text/javascript" src="{{ URL::to('assets/js/jquery-1.11.2.min.js') }}"></script>
+    <script type="text/javascript" src="{{ URL::to('assets/js/jquery-ui.min.js') }}"></script>
 
-                            </div>
-                        </div>
+    <link rel="stylesheet" href="{{ URL::to('assets/css/jquery-ui.css') }}" type="text/css">
+    <script type="text/javascript" src="{{ URL::to('assets/js/jquery.min.js') }}"></script>
+    <script type="text/javascript" src="{{ URL::to('assets/js/jquery-1.10.2.js') }}"></script>
+    <script type="text/javascript" src="{{ URL::to('assets/js/jquery-ui.js') }}"></script>
 
-                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label class="col-md-4 control-label">Password</label>
+    <!-- iCheck -->
+    <link href="{{ URL::to('assets/adminlte/plugins/iCheck/square/blue.css') }}" rel="stylesheet" type="text/css" />
 
-                            <div class="col-md-6">
-                                <input type="password" class="form-control" name="password">
+    <link href="{{ URL::to('assets/AnimatedHeaderBackgrounds/css/normalize.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ URL::to('assets/AnimatedHeaderBackgrounds/css/demo.css') }}" rel="stylesheet" type="text/css" />
 
-                                @if ($errors->has('password'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
+    <style type="text/css">
+        /* Header */
+        .large-header {
+            position: relative;
+            width: 100%;
+            background: #333;
+            overflow: hidden;
+            /*background-size: cover;*/
+            background-position: center center;
+            z-index: 1;
+        }
 
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="remember"> Remember Me
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
+        .demo-2 .large-header {
+            /*background-image: url({{ URL::to('assets/AnimatedHeaderBackgrounds/img/demo-2-bg.jpg') }});*/
+            /*background-image: url({{ URL::to('assets/AnimatedHeaderBackgrounds/img/sky2.jpg') }});*/
+            background-image: url({{ URL::to('assets/AnimatedHeaderBackgrounds/img/Theme-EcoCampus1.png') }});
+            /*background-image: url({{ URL::to('assets/AnimatedHeaderBackgrounds/img/demo-2-bg.jpg') }});*/
+            background-repeat: repeat;
+            background-position: center bottom;
+        }
 
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    <i class="fa fa-btn fa-sign-in"></i>Login
-                                </button>
+        .main-title {
+            position: absolute;
+            margin: 0;
+            padding: 0;
+            color: #f9f1e9;
+            text-align: center;
+            top: 50%;
+            left: 50%;
+            /*-webkit-transform: translate3d(-50%,-50%,0);
+            transform: translate3d(-50%,-50%,0);*/
+        }
 
-                                <a class="btn btn-link" href="{{ url('/password/reset') }}">Forgot Your Password?</a>
-                            </div>
-                        </div>
-                    </form>
-                </div>
+        .main-title .thin {
+            font-weight: 200;
+        }
+
+        @media only screen and (max-width : 768px) {
+
+            .demo-2 .main-title {
+                font-size: 4em;
+            }
+        }
+    </style>
+
+    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+    <script>
+        $.widget.bridge('uibutton', $.ui.button);
+    </script>
+    <script type="text/javascript" src="{{ URL::to('assets/adminlte/bootstrap/js/bootstrap.min.js') }}"></script>
+    <script type="text/javascript" src="{{ URL::to('assets/adminlte/plugins/input-mask/jquery.inputmask.js') }}"></script>
+    <script type="text/javascript" src="{{ URL::to('assets/adminlte/plugins/input-mask/jquery.inputmask.date.extensions.js') }}"></script>
+    <script type="text/javascript" src="{{ URL::to('assets/adminlte/plugins/input-mask/jquery.inputmask.extensions.js') }}"></script>
+    <script type="text/javascript" src="{{ URL::to('assets/js/moment.js') }}"></script>
+    <script type="text/javascript" src="{{ URL::to('assets/adminlte/plugins/datatables/jquery.dataTables.js') }}"></script>
+    <script type="text/javascript" src="{{ URL::to('assets/adminlte/plugins/datatables/dataTables.bootstrap.js') }}"></script>
+    <script type="text/javascript" src="{{ URL::to('assets/adminlte/plugins/daterangepicker/moment.min.js') }}"></script>
+    <script type="text/javascript" src="{{ URL::to('assets/adminlte/plugins/daterangepicker/daterangepicker.js') }}"></script>
+    <script type="text/javascript" src="{{ URL::to('assets/adminlte/plugins/timepicker/bootstrap-timepicker.min.js') }}"></script>
+    <script type="text/javascript" src="{{ URL::to('assets/adminlte/plugins/fullcalendar/fullcalendar.min.js') }}"></script>
+    <script type="text/javascript" src="{{ URL::to('assets/adminlte/dist/js/app.min.js') }}"></script>
+    <script type="text/javascript" src="{{ URL::to('assets/adminlte/plugins/chartjs/Chart.js') }}"></script>
+    <script type="text/javascript" src="{{ URL::to('assets/adminlte/plugins/chartjs/Chart.min.js') }}"></script>
+    <script type="text/javascript" src="{{ URL::to('assets/js/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js')}}"></script>
+    <script type="text/javascript" src="{{ URL::to('assets/adminlte/plugins/select2/select2.full.min.js') }}"></script>
+    <script type="text/javascript" src="{{ URL::to('assets/adminlte/plugins/ckeditor/ckeditor.js') }}"></script>
+    <script type="text/javascript" src="{{ URL::to('assets/AnimatedHeaderBackgrounds/js/rAF.js') }}"></script>
+    <script type="text/javascript" src="{{ URL::to('assets/AnimatedHeaderBackgrounds/js/demo-2.js') }}"></script>
+
+</head>
+<body class="login-page" style="background: #FFFFFF;">
+<div class="login-box" >
+    <div class="login-logo">
+        <a href="#"><b>Managemen</b> Rak</a><br>
+        <img height="75" width="75" src="{{URL::to('images/logo.png')}}">
+    </div><!-- /.login-logo -->
+    <div class="login-box-body" style="background: #669999;">
+        <p class="login-box-msg">Sign in to start your session</p>
+        <form role="form" method="POST" action="{{ url('/login') }}">
+        {!! csrf_field() !!}
+            <div class="form-group has-feedback">
+                <input type="text" name="email" class="form-control" placeholder="">
+                <span class="glyphicon glyphicon-user form-control-feedback"></span>
             </div>
-        </div>
-    </div>
-</div>
-@endsection
+            <div class="form-group has-feedback">
+                <input type="password" name="password" class="form-control" placeholder="Password">
+                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+            </div>
+            <div class="row">
+                <div class="col-xs-8">
+                </div><!-- /.col -->
+                <div class="col-xs-4">
+                    <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+                </div><!-- /.col -->
+            </div>
+        </form>
+
+
+    </div><!-- /.login-box-body -->
+</div><!-- /.login-box -->
+
+
+<script type="text/javascript" src="{{ URL::to('assets/AnimatedHeaderBackgrounds/js/rAF.js') }}"></script>
+<script type="text/javascript" src="{{ URL::to('assets/AnimatedHeaderBackgrounds/js/demo-2.js') }}"></script>
+
+<!-- iCheck -->
+
+
+<script>
+    $(document).ready(function(){
+        $("h5.catatan").click(function(){
+            console.log('klik toggle');
+            $("div.list-catatan").toggle('slow');
+        });
+    });
+
+    $(function () {
+        $('input').iCheck({
+            checkboxClass: 'icheckbox_square-blue',
+            radioClass: 'iradio_square-blue',
+            increaseArea: '20%' // optional
+        });
+    });
+</script>
+</body>
+</html>
+
+
 

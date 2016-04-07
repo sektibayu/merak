@@ -1,7 +1,7 @@
 <header class="main-header">
     <a href="{{ url('/') }}" class="logo" style="background-color:#070719;">
-        <span class="logo-mini">MERAK</span>
-        <span class="logo-lg">Management Rak</span>
+        <span class="logo-mini"><img height="42" width="42" src="{{URL::to('images/merak.png')}}"></span>
+        <span class="logo-lg"><img height="42" width="42" src="{{URL::to('images/merak.png')}}">&nbsp;Management Rak</span>
     </a>
 
     <nav class="navbar navbar-static-top" role="navigation">
@@ -13,16 +13,15 @@
             <ul class="nav navbar-nav">
                 <li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
-                  <span class="hidden-xs">User name</span>
+                  <span class="hidden-xs">{{Auth::user()->email}}</span>
                 </a>
                 <ul class="dropdown-menu">
                   <!-- User image -->
-                  <li class="user-header">
+                  <li class="user-header" style="background: #FFFFFF;">
                     <br>
                     <br>
                     <p>
-                      Nama
-                      <small>Posisi<br>Departemen</small>
+                      <img height="75" width="75" src="{{URL::to('images/merak.png')}}">
                     </p>
                   </li>
                   <!-- Menu Footer-->

@@ -11,6 +11,10 @@ use DB;
 
 class EkstraController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth');
+    }
+    
     public function index()
     {
     	return view('pages.ekstra.index');

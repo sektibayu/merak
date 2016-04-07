@@ -10,7 +10,7 @@
 
     <li class="treeview" >
         <a href="#">
-            <i class="fa fa-folder"></i>
+            <i class="fa fa-cogs"></i>
             <span>Akses Tabel</span>
             <i class="fa fa-angle-left pull-right"></i>
         </a>
@@ -54,21 +54,21 @@
     </li>
     <li class="treeview" >
         <a href="{{URL::to('kartubarang')}}">
-            <i class="fa fa-folder"></i>
+            <i class="fa fa-book"></i>
             <span>Kartu Barang</span>
             {{--<i class="fa fa-angle-left pull-right"></i>--}}
         </a>
     </li>
     <li class="treeview" >
         <a href="{{URL::to('registrasibarang')}}">
-            <i class="fa fa-folder"></i>
+            <i class="fa fa-random"></i>
             <span>Registrasi Pengeluaran Barang</span>
             {{--<i class="fa fa-angle-left pull-right"></i>--}}
         </a>
     </li>
         <li class="treeview" >
             <a href="{{URL::to('porm')}}">
-                <i class="fa fa-folder"></i>
+                <i class="fa fa-money"></i>
                 <span>Cost PO RM</span>
                 {{--<i class="fa fa-angle-left pull-right"></i>--}}
             </a>

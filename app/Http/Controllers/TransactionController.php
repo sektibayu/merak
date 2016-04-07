@@ -9,6 +9,10 @@ use Illuminate\Support\Facades\Input;
 
 class TransactionController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth');
+    }
+    
     public function index(){
         $share['items'] = Transaction::get();
         return view('pages.transaction.index', $share);

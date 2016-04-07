@@ -9,6 +9,10 @@ use Illuminate\Support\Facades\Input;
 
 class ItemController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth');
+    }
+    
     public function index(){
         $share['items'] = Item::get();
         return view('pages.item.index', $share);

@@ -15,6 +15,7 @@
                 </div><!-- /.box-header -->
                 <!-- form start -->
                 <form action="" method="post" class="form-horizontal">
+                 {!! csrf_field() !!}
                     <div class="box-body">
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-4 control-label">Name</label>
@@ -25,7 +26,7 @@
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-4 control-label">Username</label>
                             <div class="col-sm-7">
-                                <input type="text" name="username" class="form-control" placeholder="User Name" required>
+                                <input type="text" name="email" class="form-control" placeholder="User Name" required>
                             </div>
                         </div>
                         <div class="form-group">
