@@ -62,7 +62,7 @@
     <li class="treeview" >
         <a href="{{URL::to('registrasibarang')}}">
             <i class="fa fa-random"></i>
-            <span>Registrasi Pengeluaran Barang</span>
+            <span>Reg. Pengeluaran Barang</span>
             {{--<i class="fa fa-angle-left pull-right"></i>--}}
         </a>
     </li>

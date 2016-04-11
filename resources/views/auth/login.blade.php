@@ -113,7 +113,7 @@
         <form role="form" method="POST" action="{{ url('/login') }}">
         {!! csrf_field() !!}
             <div class="form-group has-feedback">
-                <input type="text" name="email" class="form-control" placeholder="">
+                <input type="text" name="email" class="form-control" placeholder="Username">
                 <span class="glyphicon glyphicon-user form-control-feedback"></span>
             </div>
             <div class="form-group has-feedback">

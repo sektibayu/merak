@@ -26,14 +26,14 @@
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-4 control-label">Username</label>
                             <div class="col-sm-7">
-                                <input type="text" name="username" class="form-control" value="{{ $items->username }}"  required>
+                                <input type="text" name="email" class="form-control" value="{{ $items->email }}"  required>
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="inputEmail3" class="col-sm-4 control-label">Enabled</label>
+                            <label for="inputEmail3" class="col-sm-4 control-label">New Password</label>
                             <div class="col-sm-7">
-                                <input type="text" name="password" class="form-control" value="{{ $items->password }}"  required>
+                                <input type="text" name="password" class="form-control" required>
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             </div>
                         </div>

@@ -62,8 +62,9 @@ class Lala extends Migration
         {
             $table->increments('userid');
             $table->string('name');
-            $table->string('username');
+            $table->string('email');
             $table->string('password');
+            $table->rememberToken();
         });
     }
 

@@ -10,17 +10,19 @@
 		<div class="col-md-6 col-md-offset-3">
 			<!-- Horizontal Form -->
 			<div class="box box-info">
+                    <br>
                     <!-- <div class="box-body">
                         <a href="#bonrequest"><button>PRINT BON PERMINTAAN BARANG</button></a>
                     </div>
                     <div class="box-body">
                         <a href="{{ URL::to('ekstra/printsaldo') }}"><button>PRINT SALDO SELURUH BARANG</button></a>
                     </div> -->
-                    <button class="btn btn-primary" title="printbon" data-toggle="modal" data-target="#bonrequest">&nbsp;&nbsp;PRINT BON PERMINTAAN BARANG</button>
+                    <center><button class="btn btn-primary" title="printbon" data-toggle="modal" data-target="#bonrequest">&nbsp;&nbsp;PRINT BON PERMINTAAN BARANG</button></center>
                     <br>
                     <br>
-                    <a href="{{ URL::to('ekstra/printsaldo') }}"><button class="btn btn-primary" title="printsaldo" data-target="{{ URL::to('ekstra/printsaldo') }}">PRINT SALDO SELURUH BARANG</button></a
->                    <div class="modal fade" id="bonrequest" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <center><a href="{{ URL::to('ekstra/printsaldo') }}"><button class="btn btn-primary" title="printsaldo" data-target="{{ URL::to('ekstra/printsaldo') }}">PRINT SALDO SELURUH BARANG</button></a></center>
+                    <br>                 
+                    <div class="modal fade" id="bonrequest" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
