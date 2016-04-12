@@ -167,7 +167,7 @@ class EkstraController extends Controller
                     ->where('transaction.inout','=',0)
                     ->get();
 
-        Excel::create('DATAP_PERMINTAAN'.Input::get('waktu'), function($excel) use($items){
+        Excel::create('DATA_PERMINTAAN_'.Input::get('waktu'), function($excel) use($items){
             $excel->setTitle('DATA PERMINTAAN')
                     ->setCompany('PT. BORNEO INDAH MARJAYA
                         ');
