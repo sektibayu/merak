@@ -24,23 +24,28 @@ class KartuBarangController extends Controller
     }
 
     public function detail(Request $request,$id){
-        $share['transactions'] = DB::table('Transaction')->join('Status','Transaction.statusid','=','Status.statusid')->where('itemid','=',$id)->get();
+        $share['transactions'] = DB::table('Transaction')->leftjoin('Status','Transaction.statusid','=','Status.statusid')->where('itemid','=',$id)->get();
          // $share['transactions'] =DB::select('select *from Transaction, status');
-        //$share['transactions'] = Transaction::get();
+        // $share['transactions'] = Transaction::get();
+        // dd($share['transactions']);
         if(Request::isMethod('get')){
             $share['item'] = Item::find($id);
             $share['status'] = Status::get();
             return view('pages.kartuBarang.detail', $share);
         }else if(Request::isMethod('post')){
             // $datetime = request::input('date') + request::input('waktu'); 
+            $tmp = request::input('date');
+            $waktu = substr($tmp, 6,4)."-".substr($tmp, 0,2)."-".substr($tmp, 3,2)."T".request::input('time');
+            // dd($waktu);
             $share['transaction'] = Transaction::create([
-                'time'=>request::input('date'),
+                'time'=>$waktu,
                 // 'time'=>$datetime,
                 'itemid'=>$id,
                 'inout'=>request::input('plusminus'),
                 'tmp_stock'=>request::input('jumlah'),
                 'statusid'=>request::input('statusid')
                 ]);
+                // dd(request::input('date'),$waktu);
             if(request::input('plusminus')=='1'){
                 $share['item'] = Item::find($id);
                 $share['item']->price = ((( $share['item']->price * $share['item']->stock ) + (request::input('harga_baru') * request::input('jumlah')))/($share['item']->stock + request::input('jumlah')));

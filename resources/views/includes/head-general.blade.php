@@ -14,7 +14,7 @@
 <link href="{{ URL::to('assets/bootstrap/css/bootstrap-datetimepicker.min.css') }}" rel="stylesheet" type="text/css" />
 <link href="{{ URL::to('assets/css/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css') }}" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" href="{{ URL::to('assets/adminlte/plugins/select2/select2.min.css') }}" type="text/css">
-<link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+<!-- <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"> -->
 
 <script type="text/javascript" src="{{ URL::to('assets/js/jquery-1.11.2.min.js') }}"></script>
 <script type="text/javascript" src="{{ URL::to('assets/js/jquery-ui.min.js') }}"></script>

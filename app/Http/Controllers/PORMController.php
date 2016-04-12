@@ -18,6 +18,11 @@ class PORMController extends Controller
     }
     
     public function index(){
+        $share['tahuns'] = array();
+        $tahun = date('Y');
+        for ($i=$tahun - 5; $i < $tahun+5; $i++) { 
+            array_push($share['tahuns'], $i);
+        }
         setlocale(LC_ALL, 'IND');
 
         $price = Item::get();

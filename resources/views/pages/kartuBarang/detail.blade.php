@@ -32,6 +32,7 @@
                                 <div class="modal-body">
                                    <!-- isi table -->
                                     <form action="" method="post" class="form-horizontal">
+                                    {!! csrf_field() !!}
                                         <div class="box-body">
                                             <div class="form-group">
                                                 <div class="col-sm-7">
@@ -41,8 +42,17 @@
                                             <div class="form-group">
                                                 <label for="inputEmail3" class="col-sm-4 control-label">Tanggal</label>
                                                 <div class="col-sm-7">
-                                                    <input type="datetime-local" name="date" class="form-control" required>
+                                                    <input id="lala1" type="text" name="date" class="form-control" required>
                                                 </div>
+                                                <script type="text/javascript">
+                                                    $("#lala1").datepicker();
+                                                </script>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="inputEmail3" class="col-sm-4 control-label">Waktu</label>
+                                                <div class="col-sm-7">
+                                                    <input placeholder="HH:MM" type="text" name="time" class="form-control" pattern="([01]?[0-9]|2[0-3]):[0-5][0-9]" required>
+                                                </div> 
                                             </div>
                                             <!-- <div class="form-group">
                                                 <label for="inputEmail3" class="col-sm-4 control-label">Waktu</label>
@@ -64,7 +74,7 @@
                                             </div>
                                             <div class="form-group">
                                                 <div class="col-sm-7">
-                                                    <input type="hidden" name="statusid" class="form-control" value="1" required>
+                                                    <input type="hidden" name="statusid" class="form-control" value="" required>
                                                 </div>
                                             </div>
                                         </div><!-- /.box-body -->
@@ -91,6 +101,7 @@
                                 <div class="modal-body">
                                    <!-- isi table -->
                                    <form action="" method="post" class="form-horizontal">
+                                   {!! csrf_field() !!}
                                         <div class="box-body">
                                             <div class="form-group">
                                                 <div class="col-sm-7">
@@ -100,15 +111,18 @@
                                             <div class="form-group">
                                                 <label for="inputEmail3" class="col-sm-4 control-label">Tanggal</label>
                                                 <div class="col-sm-7">
-                                                    <input type="datetime-local" name="date" class="form-control" required>
+                                                    <input id="lala2" type="text" name="date" class="form-control" required>
                                                 </div>
+                                                <script type="text/javascript">
+                                                    $("#lala2").datepicker();
+                                                </script>
                                             </div>
-                                            <!-- <div class="form-group">
+                                            <div class="form-group">
                                                 <label for="inputEmail3" class="col-sm-4 control-label">Waktu</label>
                                                 <div class="col-sm-7">
-                                                    <input type="time" name="waktu" class="form-control" required>
-                                                </div>
-                                            </div> -->
+                                                    <input placeholder="HH:MM" type="text" name="time" class="form-control" pattern="([01]?[0-9]|2[0-3]):[0-5][0-9]" required>
+                                                </div> 
+                                            </div>
                                             {!! csrf_field() !!}
                                             <div class="form-group">
                                                 <label for="inputEmail3" class="col-sm-4 control-label">Jumlah</label>
@@ -225,7 +239,13 @@
                                     {{ $transaction->tmp_stock }}
                                 @endif
                                 </td>
-                                <td class="text-center">{{ $transaction->desc }}</td>
+                                <td class="text-center">
+                                @if($transaction->desc == NULL)
+                                <p>-</p>
+                                @else
+                                {{ $transaction->desc }}
+                                @endif
+                                </td>
                                 <td class="text-center">
                                     <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#modal{{$i}}"><span class="glyphicon glyphicon-remove"></span></button>
                                     <!-- Modal -->
