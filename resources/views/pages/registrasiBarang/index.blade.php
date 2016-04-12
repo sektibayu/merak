@@ -18,13 +18,13 @@
                     <table class="table table-striped table-hover table-bordered" id="table-department">
                         <thead>
                             <tr>
-                                <th class="col-md-1">TANGGAL</th>
-                                <th>NOMOR BARANG</th>
-                                <th>NAMA</th>
-                                <th>SPEK</th>
-                                <th>JUMLAH</th>
+                                <th class="col-md-1">Tanggal</th>
+                                <th>Nomor Barang</th>
+                                <th>Nama</th>
+                                <th>Spek</th>
+                                <th>Jumlah</th>
                                 <th>UM</th>
-                                <th>KETERANGAN</th>
+                                <th>Keterangan</th>
                             </tr>
                         </thead>
                         <tbody>

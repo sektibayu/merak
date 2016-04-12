@@ -23,31 +23,31 @@
                     <table class="table table-striped table-hover table-bordered">
                         <tbody>
                             <tr>
-                                <th>NAMA</th>
+                                <th>Nama</th>
                                 <td>{{ $item->name }}</td>
                             </tr>
                             <tr>
-                                <th>SPEK</th>
+                                <th>Spek</th>
                                 <td>{{ $item->spec }}</td>
                             </tr>
                             <tr>
-                                <th>NOMOR PART</th>
+                                <th>Nomor Part</th>
                                 <td>{{ $item->no_part }}</td>
                             </tr>
                             <tr>
-                                <th class="col-md-3">LOKASI RACK</th>
+                                <th class="col-md-3">Lokasi Rak</th>
                                 <td>{{ $item->rack->code }}</td>
                             </tr>
                             <tr>
-                                <th>HARGA (IDR)</th>
+                                <th>Harga (IDR)</th>
                                 <td>{{ $item->price }}</td>
                             </tr>
                             <tr>
-                                <th>STOCK</th>
+                                <th>Stok</th>
                                 <td>{{ $item->stock }}</td>
                             </tr>
                             <tr>
-                                <th>SATUAN</th>
+                                <th>Satuan</th>
                                 <td>{{ $item->pieces }}</td>
                             </tr>
                         </tbody>

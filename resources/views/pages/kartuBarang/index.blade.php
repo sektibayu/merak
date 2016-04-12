@@ -17,17 +17,17 @@
         <div class="col-md-12">
             <div class="box">
                 <div class="box-header">
-                    <h3 class="box-title">List Item</h3>
+                    <h3 class="box-title">List Kartu Barang</h3>
                 </div>
                 <div class="box-body">
                     <table class="table table-striped table-hover table-bordered" id="table-department">
                         <thead>
                             <tr>
                                 <th class="col-md-1">No.</th>
-                                <th>NAMA</th>
-                                <th>SPEK</th>
+                                <th>Nama</th>
+                                <th>Spek</th>
                                 <!-- <th>LOKASI RAK</th> -->
-                                <th>NOMOR PART</th>
+                                <th>Nomor Part</th>
                                 <!-- <th>HARGA (IDR)</th> -->
                                 <!-- <th>STOCK</th> -->
                                 <!-- <th>SATUAN</th> -->

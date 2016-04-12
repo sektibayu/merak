@@ -24,7 +24,7 @@
                         <thead>
                             <tr>
                                 <th class="col-md-1">No.</th>
-                                <th>Nama</th>
+                                <th>Rak Kode</th>
                                 <th>Enable</th>
                                 <th class="col-md-1 text-center">Aksi</th>
                             </tr>

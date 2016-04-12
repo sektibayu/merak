@@ -24,13 +24,13 @@
                         <thead>
                             <tr>
                                 <th class="col-md-1">No.</th>
-                                <th>NAMA</th>
-                                <th>SPEK</th>
-                                <th>LOKASI RAK</th>
-                                <th>NOMOR PART</th>
-                                <th>HARGA (IDR)</th>
-                                <th>STOCK</th>
-                                <th>SATUAN</th>
+                                <th>Nama</th>
+                                <th>Spek</th>
+                                <th>Lokasi Rak</th>
+                                <th>Nomor Part</th>
+                                <th>Harga (IDR)</th>
+                                <th>Stok</th>
+                                <th>Satuan</th>
                                 <th class="col-md-1 text-center">Action</th>
                             </tr>
                         </thead>

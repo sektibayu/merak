@@ -39,30 +39,30 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="inputEmail3" class="col-sm-4 control-label">Price</label>
+                            <label for="inputEmail3" class="col-sm-4 control-label">Harga (IDR)</label>
                             <div class="col-sm-7">
                                 <input type="number" name="price" class="form-control" value="{{ $items->price }}"  required>
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="inputEmail3" class="col-sm-4 control-label">Spec</label>
+                            <label for="inputEmail3" class="col-sm-4 control-label">Spek</label>
                             <div class="col-sm-7">
                                 <input type="text" name="spec" class="form-control" value="{{ $items->spec }}"  required>
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="inputEmail3" class="col-sm-4 control-label">Stock</label>
+                            <label for="inputEmail3" class="col-sm-4 control-label">Stok</label>
                             <div class="col-sm-7">
                                 <input type="number" name="stock" class="form-control" value="{{ $items->stock }}"  required>
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="inputEmail3" class="col-sm-4 control-label">Pieces</label>
+                            <label for="inputEmail3" class="col-sm-4 control-label">Satuan</label>
                             <div class="col-sm-7">
-                                <input type="number" name="pieces" class="form-control" value="{{ $items->pieces }}"  required>
+                                <input type="text" name="pieces" class="form-control" value="{{ $items->pieces }}"  required>
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             </div>
                         </div>

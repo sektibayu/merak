@@ -23,6 +23,7 @@ class PORMController extends Controller
         for ($i=$tahun - 5; $i < $tahun+5; $i++) { 
             array_push($share['tahuns'], $i);
         }
+        // dd($share['tahuns']);
         setlocale(LC_ALL, 'IND');
 
         $price = Item::get();
@@ -82,11 +83,12 @@ class PORMController extends Controller
                 $thisIs[$stat->statusid][+$lis] = 0;
             }
         }
-
+// dd(+substr($item->time,8,2));
         foreach($items as $item){
-            $thisIs[$item->statusid][+substr($item->time,8,2)] += $item->tmp_stock * $prices[$item->itemid];
+             @$thisIs[@$item->statusid][+substr(@$item->time,8,2)] += @$item->tmp_stock * @$prices[$item->itemid];
+
         }
-//dd($thisIs);
+// dd($thisIs);
         $subTotal = array();
         $total = array();
         $tot1 = 0; $tot2 = 0;

@@ -44,8 +44,8 @@
                                             <div class="col-sm-4">
                                             </div>
                                             <div class="col-sm-7">
-                                                <button type="submit" class="btn btn-default pull-right">Submit</button>
-                                                <button type="button" class="btn btn-info pull-left" data-dismiss="modal">Cancel</button>
+                                                <button type="submit" class="btn btn-info pull-right">Submit</button>
+                                                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Cancel</button>
                                             </div>
                                         </div><!-- /.box-footer -->
                                     </form>

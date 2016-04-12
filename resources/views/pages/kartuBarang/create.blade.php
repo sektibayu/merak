@@ -18,25 +18,25 @@
                 {!! csrf_field() !!}
                     <div class="box-body">
                         <div class="form-group">
-                            <label for="inputEmail3" class="col-sm-4 control-label">NAMA</label>
+                            <label for="inputEmail3" class="col-sm-4 control-label">Nama</label>
                             <div class="col-sm-7">
                                 <input type="text" name="name" class="form-control" placeholder="Name" required>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="inputEmail3" class="col-sm-4 control-label">SPEK</label>
+                            <label for="inputEmail3" class="col-sm-4 control-label">Spek</label>
                             <div class="col-sm-7">
                                 <input type="text" name="spec" class="form-control" placeholder="spec" required>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="inputEmail3" class="col-sm-4 control-label">NOMOR PART</label>
+                            <label for="inputEmail3" class="col-sm-4 control-label">Nomor Part</label>
                             <div class="col-sm-7">
                                 <input type="text" name="no_part" class="form-control" placeholder="nomer part" required>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="inputEmail3" class="col-sm-4 control-label">LOKASI RACK</label>
+                            <label for="inputEmail3" class="col-sm-4 control-label">Lokasi Rak</label>
                             <div class="col-sm-7">
                                 <select name = "rackid">
                                     <option></option>
@@ -47,13 +47,13 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="inputEmail3" class="col-sm-4 control-label">HARGA (IDR)</label>
+                            <label for="inputEmail3" class="col-sm-4 control-label">Harga (IDR)</label>
                             <div class="col-sm-7">
                                 <input type="number" name="price" class="form-control" placeholder="price" required>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="inputEmail3" class="col-sm-4 control-label">Pieces</label>
+                            <label for="inputEmail3" class="col-sm-4 control-label">Satuan</label>
                             <div class="col-sm-7">
                                 <input type="text" name="pieces" class="form-control" placeholder="PCS" required>
                             </div>
