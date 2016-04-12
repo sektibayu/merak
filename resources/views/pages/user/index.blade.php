@@ -38,7 +38,11 @@
                                 <td class="text-center">{{ $item->email}}</td>
                                 <td class="text-center">
                                 <a href="{{ URL::to('user/update/' . $item->userid) }}" class="btn btn-primary btn-xs"title="Sunting"><span class="glyphicon glyphicon-pencil"></span></a>
+                                    @if($item->name === 'admin')
+                                    
+                                    @else
                                     <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#modal{{$i}}"><span class="glyphicon glyphicon-remove"></span></button>
+                                    @endif
                                     <!-- Modal -->
                                     <div class="modal fade" id="modal{{$i}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                                         <div class="modal-dialog">

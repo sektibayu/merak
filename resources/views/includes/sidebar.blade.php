@@ -7,7 +7,7 @@
             </a>
         </li>
     @endif
-
+    @if(Auth::user()->name === 'admin')
     <li class="treeview" >
         <a href="#">
             <i class="fa fa-cogs"></i>
@@ -52,6 +52,7 @@
             </li>
         </ul>
     </li>
+    @endif
     <li class="treeview" >
         <a href="{{URL::to('kartubarang')}}">
             <i class="fa fa-book"></i>
